@@ -1,5 +1,7 @@
-/*                                                             08/07/2024                                                                         */
+/*                                                                             08/07/2024                                                                                                */
+
 /// BASIC ARITHMATIC OPERATORS
+
 /*
 #include <iostream>
 using namespace std;
@@ -140,27 +142,27 @@ int main() {
 }
 */
 
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-int main() {
-    bool flag = true;      // bool me true/ false store hota hai  true - 1 false - 0
-    cout<<flag<<endl;
+// int main() {
+//     bool flag = true;      // bool me true/ false store hota hai  true - 1 false - 0
+//     cout<<flag<<endl;
 
-    bool flag2 = false;      // true - 1 false - 0
-    cout<<flag2<<endl;
+//     bool flag2 = false;      // true - 1 false - 0
+//     cout<<flag2<<endl;
 
-    cout<<(5>2)<<endl; // it is true 1 will return
+//     cout<<(5>2)<<endl; // it is true 1 will return
 
-    cout<<(5<2)<<endl; // it is false 0 will return
+//     cout<<(5<2)<<endl; // it is false 0 will return
 
-    cout<<(5==2)<<endl; // equal equal both not matched
+//     cout<<(5==2)<<endl; // equal equal both not matched
 
-    cout<<(5==5)<<endl; // equal equal both  matched
+//     cout<<(5==5)<<endl; // equal equal both  matched
 
-    cout<<(5!=2)<<endl; // not equal to  - true
+//     cout<<(5!=2)<<endl; // not equal to  - true
 
-    cout<<(5!=5)<<endl; // not equal to -  false
+//     cout<<(5!=5)<<endl; // not equal to -  false
 
-    return 0;
-}
+//     return 0;
+// }
