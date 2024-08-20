@@ -52,6 +52,8 @@ int main () {
 
 
 // print ascii with character
+
+/* 
 #include <iostream>
 using namespace std;
 
@@ -61,3 +63,109 @@ int main ( ) {
     }
     return 0;
 }
+*/
+
+/* 
+#include <iostream>
+using namespace std;
+
+int main () {
+    int n; 
+
+    cout<<"enter an integer"<<endl;
+    cin>>n;
+
+    int factorial = 1;
+    int temp = n;
+
+    while (temp > 0)
+
+    {
+        factorial *= temp;
+        temp--;  
+    }
+
+    cout<<"factorial of: "<<temp<<"is: "<<factorial<<endl;
+
+    return 0;
+}
+*/ 
+
+/* 
+// Write a C++ program that reads numbers until the user enters a negative number, then prints the sum of all entered positive numbers using a while loop.
+
+#include <iostream>
+using namespace std;
+
+int main () {
+    int n = 0, sum = 0;
+    
+
+    while (true) // bcz n is by default 0 
+    {
+    cout<<"enter numbers: ";    
+    cin>>n;
+    if(n<0) {
+        break;
+    }
+    sum += n;
+    }
+
+    cout<<"sum is: "<<sum<<endl;
+    return 0;
+}
+*/
+
+/* 
+
+// fabonacci series
+#include <iostream>
+using namespace std;
+
+int main () {
+    int n;
+    cout<<"enter an integer"<<endl;
+    cin>>n;
+
+    int prev = -1, current = 1 , next;
+    for (int i = 1; i < n; i++)
+    {
+       next = prev + current;
+       cout<<next<<" ";
+       prev = current;
+       current = next;
+    }
+    
+    return 0;
+
+}
+*/ 
+
+/* 
+
+// GCD - two numbers
+
+#include <iostream>
+using namespace std;
+
+int main () {
+    int n, m;
+    cout<<"Enter two integers: ";
+    cin>> n >> m;
+
+    if(m > n) {
+        int temp = n;
+        n = m;
+        m = temp;
+    }
+    
+    while( m != 0 ){
+        int remainder = n % m;
+        n = m;
+        m  = remainder;
+    }
+
+    cout<<n<<endl; // n bcz m at last will be equal to 0 and n will have to be num2 (m) 
+    return 0;
+}
+*/  
