@@ -169,3 +169,99 @@ int main () {
     return 0;
 }
 */  
+
+
+/* // Write a C++ program to print all prime numbers between 1 and 100 using a combination of for, if-else, and while loops.
+ 
+#include <iostream>
+using namespace std;
+
+int main () { 
+    for(int i = 2; i <= 100; i++) {
+        int n = i - 1;
+        bool flag = true;
+        while (n > 1)
+        {
+            if(i % n == 0) {
+                flag = false;
+                break;
+            }
+            n--;
+        }
+        if(flag == true) {
+            cout<<i<<" ";
+        }
+    }
+    return 0;
+}
+*/
+
+/*
+
+// min max in a number
+
+#include <iostream>
+using namespace std;
+
+int main () { 
+    
+    int n;
+    cout<<"Enter the value of n: ";
+    cin>>n;
+    int min = n % 10;
+    int max = 0;
+
+    do
+    {
+        int r = n % 10;
+        if(r > max) {
+            max = r;
+        }
+        else if (r < min) {
+            min = r;
+        }
+        n /= 10;
+    } while (n > 0);
+    
+    cout<<"min is: "<<min<<endl;
+    cout<<"max is: "<<max<<endl;
+    return 0;
+}
+*/
+
+/*
+
+// Write a C++ program to generate and print the first n prime numbers using a combination of for, if-else, and do-while loops.
+
+
+#include <iostream>
+using namespace std;
+
+int main () { 
+
+    int n;
+    cout<<"Enter an integer: ";
+    cin>>n;
+
+    for(int i = 1; i <= n ; i++) {
+        int j = 2;
+        bool flag = true;
+
+        do
+        {
+            if(i % j == 0 ){
+                flag = false;
+                break;
+            }
+
+            j++;
+        } while (j < i);
+
+        if(flag == true) {
+            cout<< i << " ";
+        }
+    }
+
+    return 0;
+}
+*/
