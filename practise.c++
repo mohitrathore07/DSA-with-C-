@@ -1,6 +1,6 @@
 
 /*
-// Leap Year Program 
+// Leap Year Program
 #include <iostream>
 using namespace std;
 
@@ -9,8 +9,8 @@ int main () {
     cout<<"Enter an integer: "<<endl;
     cin>>year;
 
-    // if((year%4==0 || year % 400 == 0) && year % 100 != 0 ) 
-    if( ( year % 4 == 0 && year % 100 != 0 ) || year % 400 == 0 ) // for exceptions like 2000 it will give a perfect solution 
+    // if((year%4==0 || year % 400 == 0) && year % 100 != 0 )
+    if( ( year % 4 == 0 && year % 100 != 0 ) || year % 400 == 0 ) // for exceptions like 2000 it will give a perfect solution
     {
         cout<<"leap"<<endl;
     }
@@ -22,7 +22,7 @@ int main () {
 */
 
 /*
-// greater num 
+// greater num
 #include <iostream>
 using namespace std;
 
@@ -50,10 +50,9 @@ int main () {
 
 */
 
-
 // print ascii with character
 
-/* 
+/*
 #include <iostream>
 using namespace std;
 
@@ -65,12 +64,12 @@ int main ( ) {
 }
 */
 
-/* 
+/*
 #include <iostream>
 using namespace std;
 
 int main () {
-    int n; 
+    int n;
 
     cout<<"enter an integer"<<endl;
     cin>>n;
@@ -82,16 +81,16 @@ int main () {
 
     {
         factorial *= temp;
-        temp--;  
+        temp--;
     }
 
     cout<<"factorial of: "<<temp<<"is: "<<factorial<<endl;
 
     return 0;
 }
-*/ 
+*/
 
-/* 
+/*
 // Write a C++ program that reads numbers until the user enters a negative number, then prints the sum of all entered positive numbers using a while loop.
 
 #include <iostream>
@@ -99,11 +98,11 @@ using namespace std;
 
 int main () {
     int n = 0, sum = 0;
-    
 
-    while (true) // bcz n is by default 0 
+
+    while (true) // bcz n is by default 0
     {
-    cout<<"enter numbers: ";    
+    cout<<"enter numbers: ";
     cin>>n;
     if(n<0) {
         break;
@@ -116,7 +115,7 @@ int main () {
 }
 */
 
-/* 
+/*
 
 // fabonacci series
 #include <iostream>
@@ -135,13 +134,13 @@ int main () {
        prev = current;
        current = next;
     }
-    
+
     return 0;
 
 }
-*/ 
+*/
 
-/* 
+/*
 
 // GCD - two numbers
 
@@ -158,25 +157,24 @@ int main () {
         n = m;
         m = temp;
     }
-    
+
     while( m != 0 ){
         int remainder = n % m;
         n = m;
         m  = remainder;
     }
 
-    cout<<n<<endl; // n bcz m at last will be equal to 0 and n will have to be num2 (m) 
+    cout<<n<<endl; // n bcz m at last will be equal to 0 and n will have to be num2 (m)
     return 0;
 }
-*/  
-
+*/
 
 /* // Write a C++ program to print all prime numbers between 1 and 100 using a combination of for, if-else, and while loops.
- 
+
 #include <iostream>
 using namespace std;
 
-int main () { 
+int main () {
     for(int i = 2; i <= 100; i++) {
         int n = i - 1;
         bool flag = true;
@@ -203,8 +201,8 @@ int main () {
 #include <iostream>
 using namespace std;
 
-int main () { 
-    
+int main () {
+
     int n;
     cout<<"Enter the value of n: ";
     cin>>n;
@@ -222,7 +220,7 @@ int main () {
         }
         n /= 10;
     } while (n > 0);
-    
+
     cout<<"min is: "<<min<<endl;
     cout<<"max is: "<<max<<endl;
     return 0;
@@ -237,7 +235,7 @@ int main () {
 #include <iostream>
 using namespace std;
 
-int main () { 
+int main () {
 
     int n;
     cout<<"Enter an integer: ";
@@ -265,3 +263,177 @@ int main () {
     return 0;
 }
 */
+
+/*
+
+// prime b/w 2 numbers
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, b;
+    cout << "enter two integers (a <= b): " << endl;
+    cin >> a >> b;
+
+    while (a > b)
+    {
+        cout << "The first number should be less than or equal to the second number. Please re-enter: " << endl;
+        cin >> a >> b;
+    }
+
+    for (int i = a; i <= b; i++)
+    {
+         if (i == 1) continue;
+        bool flag = true;
+        for (int j = 2; j < i; j++)
+        {
+            if (i % j == 0)
+            {
+                flag = false;
+                break;
+            }
+        }
+       
+        if (flag == true)
+            cout << i << " ";
+    }
+
+    return 0;
+}
+*/
+
+/* 
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a , b;
+    cout << "enter an integer (a <= b)" << endl;
+    cin >> a >> b;
+    while(a > b) {
+        cout << "The first number should be less than or equal to the second number. Please re-enter: " << endl;
+        cin >> a >> b;
+    }
+
+    int prev = -1 , current = 1 , next; 
+    for(int i = a; i <= b; i++) {
+        next = prev + current;
+        cout<<next<<" ";
+        prev = current;
+        current = next;
+    }
+    return 0;
+}
+
+*/
+
+/* 
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main () {
+    int n;
+    cout<<"Enter a number to check armstrong or not: ";
+    cin >> n;
+
+    int temp = n ;
+    int count  = 0;
+    int sum = 0;
+    while(temp > 0) {
+        temp /= 10;
+        count++;
+    }
+    temp = n;
+    while(n > 0) {
+        int d = (n % 10);
+        d = pow(d , count);
+        sum += d;
+        n /= 10;
+    }
+    if(temp == sum) {
+        cout<<"Armstrong number";
+    }
+    else {
+        cout<<"not a Armstrong number";
+    }
+    return 0;
+}
+*/
+
+/* 
+#include <iostream>
+using namespace std;
+
+int main () {
+    int n;
+    cin>>n;
+
+    int prev = -1 , current = 1 , next;
+    for (int i = 1; i <= n; i++)
+    {
+        next = prev + current;
+        cout<<next<<" ";
+        prev = current;
+        current = next;
+    }
+    
+    return 0;
+}
+*/
+/* 
+#include <iostream>
+using namespace std;
+
+int main () {
+    int a, b;
+    cout<<"enter base nd exponant :";
+    cin>>a>>b;
+
+    float power  = 1;
+    bool flag = true;
+
+    if(b <= 0) {
+        flag = false;
+        b  = -b;
+    }
+
+    for(int i = 1; i <= b;i++)
+    {
+        power *= a;
+    }
+    if(flag == false) {
+        power = 1/power;
+    }
+
+    if(a==0 && b == 0) cout<<"Not defined";
+    else cout<<power;
+    return 0;
+}
+*/
+
+#include <iostream>
+using namespace std;
+
+int main () {
+    int a;
+    cout<<"enter a num (Positive number) :";
+    cin>>a;
+
+    int Esum = 0, Osum = 0;
+    for (int i = 1; i <= a; i++)
+    {
+        if(i % 2 == 0) {
+            Esum += i; 
+        }
+        else {
+            Osum += i;
+        }
+    }
+    cout<<"sum of even numbers: "<<Esum<<endl;
+    cout<<"sum of odd numbers: "<<Osum;
+    return 0;
+}
