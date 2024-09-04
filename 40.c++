@@ -293,6 +293,12 @@ for(int i = 1 ; i <= n; i++) {
 
 */
 
+/* 
+   1
+  121
+ 12321
+1234321 
+
 #include <iostream>
 using namespace std;
 
@@ -308,16 +314,154 @@ int main () {
 
     for(int k = 1; k <= (i * 2) - 1; k++) {
         cout<<x;
-        if(k >= (n/2)+1) {
-            x--;
+        if(k < i) {
+            x++;
         }
 
         else {
-            x++;
+            x--;
         }
     }
     
     cout<<endl;
    } 
+    return 0;
+}
+
+*/ 
+
+
+// another method
+/* 
+   1
+  121
+ 12321
+1234321 
+
+
+#include <iostream>
+using namespace std;
+
+int main () {
+    int n;
+    cin>>n;
+
+    for(int i = 1; i <= n; i++) {
+        for(int j = 1; j <= n-i; j++) {
+            cout<<" ";
+        }
+        for(int k = 1; k <= i; k++) {
+            cout<<k;
+        }
+
+        for(int l = i-1 ; l >= 1 ;l--) { // i - 1 bcz 1st line me kuchh print nhi karna hai nd 2nd line me 1st se start so that's why
+            if(i==1) break;
+            cout<<l;
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+
+*/
+
+/* 
+   *
+  ***
+ *****
+*******
+ *****
+  ***
+   *
+#include <iostream>
+using namespace std;
+
+int main () {
+    int n;
+    cin>>n;
+
+    for(int i = 1; i <= n ; i++) {
+        for(int k = 1; k <= n-i; k++) {
+            cout<<" ";
+        }
+        for(int j = 1; j <= (i * 2) - 1; j++) {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+
+    for(int i = n - 1; i >= 1; i--) {
+        for(int k = 1; k <= n-i; k++) {
+            cout<<" ";
+        }
+        for(int j = 1; j <= (i*2)-1; j++) {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+
+*/
+
+// another method
+/* 
+   *
+  ***
+ *****
+*******
+ *****
+  ***
+   *
+   
+
+#include <iostream>
+using namespace std;
+
+int main () {
+    int n;
+    cout<<"Enter number of rows: ";
+    cin>>n;
+    int nst=1;
+    int nsb = n-1;
+    for(int i = 1; i <= (2*n)-1; i++) {
+        // spaces
+        for(int j = 1; j <= nsb; j++) {
+            cout<<" ";
+        }
+        if(i<n) nsb--;
+        else nsb++;
+        // stars
+        for(int j = 1; j <= nst; j++) {
+            cout<<"*";
+        }
+        if(i<n) nst+=2;
+        else nst-=2;
+        cout<<endl;
+    }
+    return 0;
+}
+
+*/
+
+#include <iostream>
+using namespace std;
+
+int main () {
+    int n; 
+    cin>>n;
+    int sp = 1;
+    for(int i = 1; i <= n; i++) {
+        for(int j = 1; j <= (n*2)-1; j++) {
+            if (i==1) sp=0;
+            for(int k = 1; k <= (n+1)-i; k++) {
+                cout<<"*";
+            }
+            for(int l = 1; k <= (n+1)-i; k++) {
+                cout<<"*";
+            }
+        }
+        cout<<endl;
+    }
     return 0;
 }
