@@ -444,21 +444,196 @@ int main () {
 
 */
 
+/* 
+*******
+*** ***
+**   **
+*     *
+
+*/
+
+/* 
 #include <iostream>
 using namespace std;
 
 int main () {
-    int n; 
+
+    int n;
     cin>>n;
-    int sp = 1;
-    for(int i = 1; i <= n; i++) {
-        for(int j = 1; j <= (n*2)-1; j++) {
-            if (i==1) sp=0;
-            for(int k = 1; k <= (n+1)-i; k++) {
-                cout<<"*";
+
+    for (int i=1; i <= n*2-1; i++) {
+        cout<<"*";
+    }
+    cout<<endl;
+
+    for (int i=1; i <= n-1 ;i++) {
+        for(int j = 1; j <= n;j++) {
+            if(j <= n-i) cout<<"*";
+            else cout<<" ";
+        }
+        for(int k = 1; k <= n-1 ; k++) {
+            for(int l = 1; l <= (n-1-k); l++) {
+                cout<<" ";
             }
-            for(int l = 1; k <= (n+1)-i; k++) {
-                cout<<"*";
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+*/
+
+/* 
+
+*******
+*** ***
+**   **
+*     *
+#include <iostream> 
+using namespace std;
+
+int main () {
+    int n;
+    cin>>n;
+
+    for(int i = 1; i <= n * 2 - 1; i++) {
+        cout<<"*";
+    }
+    cout<<endl;
+    for(int i = 1; i <= n - 1; i++) {
+     for(int j = 1; j <= n; j++) {
+        if(j <= n - i) {
+            cout<<"*";
+        }
+        else {
+            cout<<" ";
+        }
+    }   
+    
+     for(int j = 1; j <= n - 1; j++) {
+        if(j < i) {
+            cout<<" ";
+        }
+        else {
+            cout<<"*";
+        }
+    }   
+    cout<<endl;
+    }
+    return 0;
+}
+
+*/
+
+// another way 
+
+// logic -
+/* 
+1st print this
+*******
+2nd
+***
+**
+*
+3rd 
+-
+--
+---
+4th
+***
+ **
+  *
+
+#include <iostream>
+using namespace std;
+
+int main () {
+    int n;
+    cin>>n;
+    int m = n - 1;
+    int nsp = 1; // for spaces 
+    for(int i = 1; i <= n*2-1; i++) {
+        cout<<"*";
+    }
+    cout<<endl;
+    for(int i = 1; i <= m; i++) {
+        // stars
+        for(int j = 1; j <= m+1-i; j++) {
+            cout<<"*";
+        }
+        // spaces
+        for(int k = 1; k <= nsp; k++) {
+            cout<<" ";
+        }
+        nsp += 2;
+        // stars
+        for(int j = 1;j <= m+1-i; j++) {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+
+*/
+/* 
+1234567
+123 567
+12   67
+1     7
+#include <iostream>
+using namespace std;
+
+int main () {
+    int n;
+    cin>>n;
+    int m = n - 1;
+    int nsp = 1; // for spaces 
+    for(int i = 1; i <= n*2-1; i++) {
+        cout<<i;
+    }
+    cout<<endl;
+    for(int i = 1; i <= m; i++) {
+        // stars
+        int a = 1;
+        for(int j = 1; j <= m+1-i; j++) {
+            cout<<a;
+            a++;
+        }
+        // spaces
+        for(int k = 1; k <= nsp; k++) {
+            cout<<" ";
+            a++;
+        }
+        nsp += 2;
+        
+        for(int j = 1;j <= m+1-i; j++) {
+            cout<<a;
+            a++;
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+*/
+
+
+#include <iostream>
+using namespace std;
+
+int main ()  {
+    int n = 4;
+    for(int i = 1; i <= n * 2 - 1; i++) {
+        int x; 
+        for(int j = 1; j <= n * 2 - 1; j++) {
+            if(i == 1 || i == n || j == 1 || j == n) {
+                cout<<n;
+            }
+            else if(i == j || j == (n * 2 - 1)) {
+                x = (n + 1) - i;
+            }
+            else {
+                cout<<x;
             }
         }
         cout<<endl;
