@@ -312,7 +312,7 @@ int main () {
         cout<<" ";
     }
 
-    for(int k = 1; k <= (i * 2) - 1; k++) {
+    for(int k = 1; k <= (2i * ) - 1; k++) {
         cout<<x;
         if(k < i) {
             x++;

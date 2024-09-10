@@ -119,6 +119,7 @@ int main () {
             if(j <= n-i) cout<<"*";
             else cout<<" ";
         }
+        
         for(int k = 1; k <= n-1 ; k++) {
             for(int l = 1; l <= (n-1-k); l++) {
                 cout<<" ";
