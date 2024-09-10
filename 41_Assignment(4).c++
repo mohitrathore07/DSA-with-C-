@@ -481,7 +481,7 @@ int main () {
         cout<<"*";
         for(int j = 1; j <= x; j++) {
             cout<<" ";
-        }
+    
         x -= 2;
         if(i == n) break;
         cout<<"*";
