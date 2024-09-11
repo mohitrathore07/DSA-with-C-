@@ -465,6 +465,11 @@ int main () {
 }
 */
 
+/* 
+*      *
+ *    *
+  *  *
+   *
 #include <iostream>
 using namespace std;
 
@@ -474,16 +479,183 @@ int main () {
     int x = n + 2;
 
     for(int i = 1; i <= n; i++) {
+
         for(int j = 1; j <= i - 1; j++) {
             if(i == 1) break;
+            cout<<" ";
+        }
+
+        cout<<"*";
+
+        for(int j = 1; j <= x; j++) {
+            cout<<" ";
+        }
+        x -= 2;
+        if(i == n) break;
+        cout<<"*";
+        cout<<endl;
+    }
+    return 0;
+}
+*/
+
+/* 
+   *
+  * *
+ *   *
+*     *
+ *   *
+  * *
+   *
+
+#include <iostream>
+using namespace std;
+
+int main () {
+    int n;
+    cin>>n;
+
+    int x = -1;
+    for(int i = 1; i <= n ; i++) {
+        for(int j = 1; j <= n-i; j++) {
             cout<<" ";
         }
         cout<<"*";
         for(int j = 1; j <= x; j++) {
             cout<<" ";
+        }
+        x+=2;
+        if(i != 1) cout<<"*";
+        cout<<endl;
+    }
+    x= n/2+1;
+
+    for(int i = 1; i <= n - 1; i++) {
+        for(int j = 1; j <= i; j++) {
+            cout<<" ";
+        }
+        cout<<"*";
+        for(int j = 1; j <= x; j++) {
+            cout<<" ";
+        }
+        x-=2;
+        if(i != n-1) cout<<"*";
+        cout<<endl;
+    }
+    return 0;
+}
+*/
+
+
+/* 
+     1
+     2 2
+    3   3
+   4     4
+
+#include <iostream>
+using namespace std;
+
+int main ( ){
+    int n;
+    cin>>n;
+    int x = -1;
+    for(int i = 1; i <= n; i++) {
+        for(int j = 1 ; j <= n-i;j++) {
+            cout<<" ";
+        }
+        cout<<i;
+        for(int j = 1; j <= x; j++) {
+            cout<<" ";
+        }
+        x+=2;
+        if(i!=1) cout<<i;
+        cout<<endl;
+    }
+    return 0;
+}
+
+*/
+
+/* 
+    *
+   ***
+  * * *
+ *  *  *
+*   *   *
+#include <iostream>
+using namespace std;
+
+int main () {
+    int n;
+    cin>>n;
+    int x = 1;
+    for(int i = 1; i <= n ; i++) {
+        for(int j = 1; j <= n - i; j++ ) {
+            cout<<" ";
+        }
+        cout<<"*";
+        if(i == 1)
+        {
+        cout<<endl;
+        continue;
+        }
+        for(int j = 1 ; j <= x; j++) {
+            if(j == i - 1) cout<<"*";
+            else cout<<" ";
+        }
+        x+=2;
+        cout<<"*";
+        cout<<endl;
+    }
+    return 0;
+}
+*/
+
+#include <iostream>
+using namespace std;
+
+int main () {
+    int n;
+    cin>>n;
+    int x = 1;
+    for(int i = 1; i <= n ; i++) {
+        for(int j = 1; j <= n - i; j++ ) {
+            cout<<" ";
+        }
+        cout<<"*";
+        if(i == 1)
+        {
+        cout<<endl;
+        continue;
+        }
+        for(int j = 1 ; j <= x; j++) {
+            if(j == i - 1) cout<<"*";
+            else cout<<" ";
+        }
+        x+=2;
+        cout<<"*";
+        cout<<endl;
+    }
     
-        x -= 2;
-        if(i == n) break;
+    for(int i = 1; i <= n * 2 ;i++) {
+        cout<<"*";
+    }
+    cout<<endl;
+    x -= 1;
+    for(int i = 1; i <= n-1 ; i++) {
+        for(int j = 1; j <= i; j++ ) {
+            cout<<" ";
+        }
+        cout<<"*";
+        for(int j = 1 ; j <= x; j++) {
+            if(j == n - i) cout<<"*";
+            else cout<<" ";
+        }
+        x-=2;
+        if(i == n - 1) {
+            continue;
+        }
         cout<<"*";
         cout<<endl;
     }
