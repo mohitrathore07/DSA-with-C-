@@ -87,3 +87,5 @@ int main () {
     cout<<"square of num "<<n<<" is : "<<squares(n)<<endl;
     return 0;
 }
+
+
