@@ -103,6 +103,7 @@ int main () {
 }
 */
 
+/*
 // Predict the output - doubt
 #include <iostream>
 using namespace std;
@@ -119,3 +120,4 @@ int main () {
 
     return 0; 
 }
+*/
