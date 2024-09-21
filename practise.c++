@@ -415,6 +415,7 @@ int main () {
 }
 */
 
+/* 
 #include <iostream>
 using namespace std;
 
@@ -437,3 +438,34 @@ int main () {
     cout<<"sum of odd numbers: "<<Osum;
     return 0;
 }
+*/
+
+/* 
+#include <iostream>
+using namespace std;
+
+int max(int a  , int b ) {
+    return (a > b ? a : b);
+}
+int main () {
+    int a = 25;
+    int b = 52;
+    cout<<max(a, b);
+    return 0;
+}
+*/
+
+/* 
+#include <iostream>
+using namespace std;
+
+int fun(int = 0  , int  = 0 );
+int main () {
+    cout<<fun(4);
+    return 0;
+}
+
+int fun(int x , int y) {
+    return (x+y);
+}
+*/
