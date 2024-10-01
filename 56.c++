@@ -1,4 +1,4 @@
-/*                                                             25/09/2024                                                                        */
+/*                                                             30/09/2024                                                                        */
 
 /*  // find last occurance of x
 #include <iostream>
@@ -56,7 +56,7 @@ int main () {
 }
 */
 
-
+/* 
 #include <iostream>
 #include <vector> 
 using namespace std;
@@ -76,3 +76,5 @@ int main () {
     }
     return 0;
 }
+*/
+
