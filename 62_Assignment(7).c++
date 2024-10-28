@@ -158,7 +158,7 @@ int main () {
 
 
 /* Assignment - 2  */
-
+/*
 // Q - 1
 #include <iostream>
 #include <algorithm>
@@ -203,3 +203,77 @@ int main () {
     cout<<"no of triples are: "<<result;
     return 0;
 } 
+
+*/
+
+
+// Q - 2 remaining 
+/*
+
+// Q - 3
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void nonRepeatingelement (vector <int>& v) {
+    for(int i = 0; i < v.size(); i++) {
+    for(int j = 0; j < v.size(); j++) {
+        if( i != j && v[i] == v [j]) 
+        {
+            break;
+        }
+        if(j == v.size()-1) {
+            cout<<v[i]<<" ";
+            return;
+        }
+    }    
+    }
+}
+
+int main () {
+    vector <int> v = {5,5,6,6,4,8,8,7,5};
+    nonRepeatingelement(v);    
+    return 0;
+}
+*/
+
+
+/* 
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void zerostoend (vector <int>& v) {
+    int j = v.size() - 1;
+    int i = 0;
+    while ( i <= j) {
+        if (v[i] == 0 && v[j] != 0) {
+            int temp = v[i];
+            v[i] = v[j];
+            v[j] = temp;
+            i++;
+            j--;
+        }
+        else if(v[i] == 0 && v[j] == 0){
+            j--;
+        }
+        else {
+            i++;
+        }
+    } 
+} 
+
+void printelements(vector <int> & v) {
+    for (int i = 0; i < v.size(); i++) {
+        cout<<v[i]<<" ";
+    }
+}
+
+int main () {
+    vector <int> v = {5,5,0,4,0,8,7,5};
+    zerostoend(v);    
+    printelements(v);
+    return 0;
+}
+*/
