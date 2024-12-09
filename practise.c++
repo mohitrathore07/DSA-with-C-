@@ -469,3 +469,22 @@ int fun(int x , int y) {
     return (x+y);
 }
 */
+
+//  if else or condition 
+
+#include <iostream>
+using namespace std;
+
+int main () {
+    int a = 4; 
+    int b = 5;
+    int c = 6;
+
+    if (a > b || b > c) {
+        cout<<"a is greater than b";
+    }
+    else {
+        cout<<"none";
+    }
+    return 0;
+}

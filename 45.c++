@@ -1,8 +1,5 @@
 /*                                                                     14/09/2024                                                            */
 
-
-
-
 /* 
 // gcd of two numbers
 #include <iostream>

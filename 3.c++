@@ -34,7 +34,7 @@ int main () {
     cout<<endl;
     int b = 6;
     cout<<b<<endl;
-    cout<<b++<<endl; // it will print 6 then icrease 1 after printing so 6 printed as it is and then +1 =  7 // postincrement
+    cout<<b++<<endl; // it will print 6 then increase 1 after printing so 6 printed as it is and then +1 =  7 // postincrement
     cout<<++b<<endl; //  it will add 1 first means 7+1 = 8  then print 8 // preincrement
 
     cout<<b--<<endl;

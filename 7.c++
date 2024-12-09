@@ -65,7 +65,7 @@ int main () {
     int p = false;
     int q = false;
     int r = true;
-    cout<<(p==q==r)<<endl; // true first two check true then true == true - true
+    cout<<(p==q==r)<<endl; // true first two check true then true == true ----> true
 
     int a = 1;
     int b = 5;

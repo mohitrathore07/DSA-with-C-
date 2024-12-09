@@ -12,7 +12,7 @@ int main () {
     cout<<"Enter a number: "<<endl;
     cin>>n;
     for(int i = 2; i < n-1;i++) {
-        if(n%2==0) {
+        if(n%2x==0) {
             cout<<n<<"Composite number"<<endl;
             break; // break will terminate the loop finish the loop
         }
