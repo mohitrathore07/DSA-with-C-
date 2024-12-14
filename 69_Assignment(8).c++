@@ -225,3 +225,186 @@ int main () {
 }
 */
 
+/* 
+ // wave form -  7 4 1 2 5 8 9 6 3 
+#include <iostream>
+using namespace std;
+
+int main () {
+    int arr[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+
+    for(int j = 0; j < 3; j++) {
+       if(j % 2 == 0 ) {
+          for(int i = 3 - 1; i >= 0; i--) {
+            cout<<arr[i][j]<<" ";
+          } 
+        cout<<endl;
+       }
+
+       else {
+          for(int i = 0; i < 3; i++) {
+            cout<<arr[i][j]<<" ";
+          } 
+        cout<<endl;
+       }
+    }
+    return 0;
+}
+*/
+
+/* p - 2 q 4 remain
+#include <iostream>
+using namespace std;
+
+int main () {
+    int n;
+
+    cout<<"enter order of matrix: ";
+    cin>>n;
+
+    int arr[n][n];
+
+    int minr = 0 , minc = 0, maxc = n - 1, maxr = n - 1; 
+    int tne = n*n;
+    int count = 0;
+
+    while(minr <= maxr && minc <= maxc ) {
+        for(int j = minc; j <= maxc && count < tne; j++) {
+
+            // cout<<arr[minr][j]<<" ";
+            count++;
+        }
+        minr++;
+
+        for(int i = minr; i <= maxr && count < tne; i++) {
+            cout<<arr[i][maxc]<<" ";
+            count++;
+        }
+        maxc--;
+        
+        for(int j = maxc; j >= minc && count < tne; j--) {
+            cout<<arr[maxr][j]<<" ";
+            count++;
+        }
+        maxr--;
+
+        for(int i = maxr; i >= minr && count < tne; i--) {
+            cout<<arr[i][minc]<<" ";
+            count++;
+        }
+        minc--;
+
+    }
+
+    for(int i = 0 ;i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            cout<<arr[i][j]<<" "; 
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+*/
+
+// Q - 5  predict the output
+/* 
+#include <iostream>
+using namespace std;
+
+int main () {
+    int a[][2] = {{1,2},{3,4}};
+    int i , j;
+    for(int i = 0 ; i < 2; i++) {
+        for(int j = 0; j < 2; j++) {
+            cout<<a[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+*/
+
+// P -  3 Q 1
+/*  // some probelm below correct way
+#include <iostream>
+using namespace std;
+
+int main () {
+    int a[3][3] = {{1,1,1},{1,0,1},{1,1,1}};
+    int f ;
+
+    for(int i = 0 ; i < 3; i++) {
+        for(int j = 0; j < 3; j++) {
+            if(a[i][j] == 0 ) {
+                f = j;     
+            }
+        }
+        cout<<endl;
+    }
+
+    if(f > 0) {
+    for(int i = 0 ; i < 3; i++) {
+        for(int j = 0; j < 3; j++) {
+            if(i == f || j == f ) {
+                a[i][j] = 0;
+            }
+        }
+     }   
+    }
+
+    for(int i = 0 ; i < 3; i++) {
+        for(int j = 0; j < 3; j++) {
+            cout<<a[i][j]<<" ";
+        }
+        cout<<endl;
+    }   
+    
+    return 0;
+}
+*/
+
+/* 
+// correct way of putting zeros in entire row and column if zero is found 
+#include <iostream>
+using namespace std;
+
+int main () {
+    int a[3][3] = {{1,1,1},{1,0,1},{1,1,1}};
+    bool rowZeros[3] = {false};
+    bool colZero[3] = {false};
+
+    for(int i = 0 ; i < 3; i++) {
+        for(int j = 0; j < 3; j++) {
+            if(a[i][j] == 0 ) {
+                rowZeros[i] = true;
+                colZero[j] = true;
+            }
+        }
+    }    
+
+    for(int i = 0 ; i < 3; i++) {
+      if (rowZeros[i]) {
+        for(int j = 0; j < 3; j++) {
+            a[i][j] = 0;
+        }
+      }
+    }    
+
+    for(int j = 0 ;j < 3; j++) {
+      if (colZero[j]) {
+        for(int i = 0; i < 3; i++) {
+            a[i][j] = 0;
+        }
+      }
+    }    
+
+    for(int j = 0 ;j < 3; j++) {
+        for(int i = 0; i < 3; i++) {
+            cout<<a[i][j]<<" ";
+        }
+        cout<<endl;
+    }    
+
+    return 0;
+}
+*/
