@@ -98,11 +98,11 @@ int main () {
 
 // ********** Remains ***********
 // 2d array  Write a function which accepts a 2D array of integers and its size as aurguments and display the elements of middle row and columns 
-/*
+
 #include <iostream>
 using namespace std;
 
-void printingelements(int** arr , int size) {
+void printingelements(int arr[3][3] , int size) {
     int middle = size / 2;
     for(int i = 0; i < size; i++) {
         for(int j = 0; j < size; j++) {
@@ -129,10 +129,11 @@ int main () {
             cin>>arr[i][j];
         }
      }
+     
     printingelements(arr, m);
     return 0;
 }
-*/
+
 
 
 // Assignement 2d-array 2
