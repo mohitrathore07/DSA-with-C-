@@ -2,7 +2,7 @@
 
 // A.P nd  G.P questios
 
-// display A.P 1 ,3,5,7,9... upto n terms
+// display A.P 1,3,5,7,9... upto n terms
 
 /* 
 #include <iostream>

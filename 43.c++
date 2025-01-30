@@ -154,7 +154,10 @@ int main () {
 }
 */
 
-/* 
+/*
+
+- Q permutations and combinations - using formula method
+
 #include <iostream>
 using namespace std;
 
