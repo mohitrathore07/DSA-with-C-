@@ -188,7 +188,7 @@ int main() {
 
 
    /* 
-    vector <int> v(5, 7); // size - 7 and each value is  7  
+    vector <int> v(5, 7); // size - 5 and each value is  7  
     cout<<v[0]<<" "<<v[1]<<" "<<v[2]<<" ";
 
 
