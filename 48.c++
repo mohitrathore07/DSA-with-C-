@@ -115,7 +115,7 @@ int main () {
     int y = ++*ptr;
     cout<<x<<" "<<y<<endl; // 5 5 
 
-    int z = *ptr++;
+    int z = *ptr++; // here what is happened is:  address++ hua not value++
     cout<<x<<" "<<z; // 5 5   it only increments the pointer ptr after dereferencing it.
 
     return 0; 
