@@ -171,5 +171,3 @@ int main()
     */
 
 
-// k-th symbol in grammer
-

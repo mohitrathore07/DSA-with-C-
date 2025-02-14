@@ -507,15 +507,17 @@ int main () {
 // }
 
 
-#include<iostream>
-using namespace std;
+
+// #include<iostream>
+// using namespace std;
 
 
-int main() {
-    int num1 = 45;
-    int num2 = 27;
+// int main() {
+//     int num1 = 45;
+//     int num2 = 27;
 
-    int remainder = num1%num2;
-    cout<<remainder;
-    return 0; 
-}
+//     int remainder = num1%num2;
+//     cout<<remainder;
+//     return 0; 
+// }
+
