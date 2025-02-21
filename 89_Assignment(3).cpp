@@ -198,3 +198,67 @@ int main() {
 }
 */
 
+
+/*
+#include<iostream>
+#include<string>
+using namespace std;
+
+void substring(string str1 , string str2, string ans , string prev){
+    if (str1 == "" && str2 == "") 
+    {
+        cout<<ans<<endl;
+        return;
+    }
+    char ch = str1[0];
+    char ch2 = str2[0];
+    substring(str1.substr(1), str2.substr(1), ans, prev+ch);
+    substring(str1.substr(1), str2.substr(1), ans, prev+ch2);
+}
+ 
+int main (){
+    string str1 = "abcd";
+    string str2 = "zcde";
+    // printingsubsets(str1, str2 , 0, "" , "", n);
+    substring(str1 , str2, "","");
+}
+*/
+
+
+// Q - 4
+/* 
+#include<iostream>
+using namespace std;
+
+int factorial(int num , int fact) {
+    if(num==1) {
+        return fact;
+    }
+    return factorial(num-1, fact*num);
+}
+
+int main () {
+    cout<<factorial(4, 1);
+    return 0;
+}
+    */
+
+    #include<iostream>
+    using namespace std;
+    
+    int decitobin(int num , int ans) {
+        if(num == 0) {
+            return ans;
+        }
+        return decitobin(num / 2, ans * 10 + num % 2);
+    }
+    
+    int main () {
+        int num = 13;
+        int result = decitobin(num, 0);
+    
+        cout << "Binary of " << num << " is: ";
+        cout << result << endl; 
+        return 0;
+    }
+    
