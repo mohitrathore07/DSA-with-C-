@@ -145,4 +145,4 @@ int main () {
 }
 */
 
-// first nd last element position
+// first nd last element position - leetcode 
