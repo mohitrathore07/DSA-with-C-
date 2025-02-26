@@ -522,10 +522,82 @@ int main () {
 // }
 
 
-#include<iostream>
+/* 
+// first occurance of an element
+#include <iostream>
 using namespace std;
 
-int main ()  {
-    cout<<3/2;
+int main () {
+    int arr[] = {5,7,7,8,8,10};
+    int target = 6;
+    int low = 0;
+    int high = sizeof(arr)/sizeof(arr[0]) - 1;
+    bool flag = false;
+
+    if(high == 0) {
+        cout<<"-1 -1";
+        return 0;
+    }
+    while (low<=high)
+    {
+        int mid = low + (high - low) / 2;
+        if(arr[mid] == target) {
+            if(arr[mid-1] != target) {
+                flag = true;
+                cout<<mid;
+                break;
+            }
+            else {
+                high  = mid - 1; 
+            }
+        }
+        else if(arr[mid] < target) {
+            low = mid+1;
+        }
+        else {
+            high = mid - 1;
+        }
+    }
+    if(flag == false) cout<<"-1 -1"; 
+    return 0;
+}
+*/
+
+#include <iostream>
+using namespace std;
+
+int main () {
+    int arr[] = {};
+    int target = 0;
+    int low = 0;
+    int high = sizeof(arr)/sizeof(arr[0]) - 1;
+    bool flag = false;
+
+    if(sizeof(arr)/sizeof(arr[0]) == 0 ){
+        cout<<"-1 -1";
+        return 0;
+    }
+    while (low<=high)
+    {
+        int mid = low + (high - low) / 2;
+        if(arr[mid] == target) {
+            while(arr[low] != target || arr[high] != target) 
+            { 
+                if(arr[low] != target) low++;
+                if(arr[high] != target) high--;
+            }
+            flag = true;
+            cout<<low<<endl;
+            cout<<high;
+            break;
+        }
+        else if(arr[mid] < target) {
+            low = mid+1;
+        }
+        else {
+            high = mid - 1;
+        }
+    }
+    if(flag == false) cout<<"-1 -1"; 
     return 0;
 }
