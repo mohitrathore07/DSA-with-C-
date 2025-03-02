@@ -563,6 +563,7 @@ int main () {
 }
 */
 
+/* 
 #include <iostream>
 using namespace std;
 
@@ -601,3 +602,42 @@ int main () {
     if(flag == false) cout<<"-1 -1"; 
     return 0;
 }
+*/
+
+// #include <iostream>
+// using namespace std;
+
+// int main () {
+//     int arr[] = {1,3,4,8,20,28,33};
+//     // int n = sizeof(arr)/ sizeof(arr[0]);
+//     int n = 7;
+//     int k = 2;
+//     while (k > 0)
+//     {
+//         int temp = arr[n-1];
+//         for (int i = n - k; i > 0; i--)
+//         {
+//             arr[i] = arr[i-1];
+//         }
+//         arr[0] = temp;
+//         k--;
+//     }
+//     for (int i = 0; i < n; i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
+//     return 0;
+// }
+
+
+#include <iostream>
+using namespace std;
+
+int main () {
+    cout<<1/2;
+    return 0;
+}
+
+
+
+
