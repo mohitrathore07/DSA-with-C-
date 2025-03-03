@@ -630,14 +630,333 @@ int main () {
 // }
 
 
-#include <iostream>
+
+/*
+class Solution {
+    public:
+        vector<int> findClosestElements(vector<int>& arr, int k, int x) {
+            int lo = 0;
+            int hi = arr.size()-1;
+            int lb = 0;
+            int ub = 0;
+            bool flag = false; // target not found case
+            vector<int>ans;
+
+            int n  = arr.size();
+            int mid = 0;
+            if(x < arr[0]) {
+                int i = 0;
+                while (ans.size() != k) 
+                {
+                    ans.push_back(arr[i]);
+                    i++;
+                    k--;
+                }
+            }
+            else if (x > arr[n-1]) {
+                int i = n-1;
+                while (ans.size() != k) 
+                {
+                    ans.push_back(arr[i]);
+                    i--;
+                    k--;
+                }
+                
+            }
+            else {
+                while(lo <= hi) {
+                    mid = lo + (hi - lo) / 2;
+                    if(arr[mid] == x) {
+                        flag = true; // meaning target found
+                        break;
+                    } 
+                    else if (arr[mid] > x) hi = mid - 1;
+                    else lo = mid + 1;
+                }
+
+                if(flag == true) {
+                    lb = mid - 1;
+                    ub = mid + 1; 
+                    ans.push_back(x);
+                } else {
+                    lb = hi;
+                    ub =  lo; 
+                }
+    
+                while( ans.size() != k) {
+                    if(lb < 0) {
+                        ans.push_back(ub);
+                        ub++;
+                    }
+                    else if(ub > n-1) {
+                        ans.push_back(lb);
+                        lb--;
+                    }
+                    
+                    else if(abs(x - arr[lb]) >= abs(x - arr[ub])) {
+                        ans.push_back(arr[lb]);
+                        lb--;
+                    } 
+                    else {
+                        ans.push_back(arr[ub]);
+                        ub++;
+                    }
+        
+                }
+            }
+            sort(ans.begin(), ans.end());
+            return ans;
+        }
+    };
+
+*/
+
+/* 
+#include<iostream>
+#include<algorithm>
+#include<vector>
 using namespace std;
 
 int main () {
-    cout<<1/2;
-    return 0;
+    int lo = 0;
+    int x = 9;
+    int k  = 1;
+    
+    vector<int> arr = {1,1,1,10,10,10};
+    int hi = arr.size()-1;
+    int lb = 0;
+    int ub = 0;
+    bool flag = false; // target not found case
+    vector<int>ans;
+
+    int n  = arr.size();
+    int mid = 0;
+    if(x < arr[0]) {
+        int i = 0;
+        while (ans.size() != k) 
+        {
+            ans.push_back(arr[i]);
+            i++;
+        }
+    }
+    else if (x > arr[n-1]) {
+        int i = n-1;
+        while (ans.size() != k) 
+        {
+            ans.push_back(arr[i]);
+            i--;
+        }
+        
+    }
+    else {
+        while(lo <= hi) {
+            mid = lo + (hi - lo) / 2;
+            if(arr[mid] == x) {
+                flag = true; // meaning target found
+                break;
+            } 
+            else if (arr[mid] > x) hi = mid - 1;
+            else lo = mid + 1;
+        }
+
+        if(flag == true) {
+            lb = mid - 1;
+            ub = mid + 1; 
+            ans.push_back(x);
+            cout<<x<<" ";
+        } else {
+            lb = hi;
+            ub =  lo; 
+        }
+
+        while( ans.size() != k) {
+            if(lb < 0) {
+                ans.push_back(arr[ub]);
+               cout<<arr[ub]<<" ";
+                ub++;
+            }
+            else if(ub > n-1) {
+                ans.push_back(arr[lb]);
+                cout<<(arr[lb])<<" ";
+                lb--;
+            }
+            
+            else if(abs(x - arr[lb]) >= abs(x - arr[ub])) {
+                cout<<(arr[lb])<<" ";
+                ans.push_back(arr[lb]);
+                lb--;
+            } 
+            else {
+                cout<<(arr[ub])<<" ";
+                ans.push_back(arr[ub]);
+                ub++;
+            }
+
+        }
+    }
+    sort(ans.begin(), ans.end());
+    
+    return 0; 
 }
 
 
+*/
+
+/*
+class Solution {
+    public:
+        vector<int> findClosestElements(vector<int>& arr, int k, int x) {
+            int lo = 0;
+            int hi = arr.size()-1;
+            int lb = 0;
+            int ub = 0;
+            bool flag = false; // target not found case
+            vector<int>ans;
+            int n  = arr.size();
+            int mid = -1;
+            if(x < arr[0]) {
+                int i = 0;
+                while (ans.size() != k) 
+                {
+                    ans.push_back(arr[i]);
+                    i++;
+                    k--;
+                }
+            }
+            else if (x > arr[n-1]) {
+                int i = n-1;
+                while (ans.size() != k) 
+                {
+                    ans.push_back(arr[i]);
+                    i--;
+                    k--;
+                }
+            }
+            else {
+                while(lo <= hi) {
+                    int mid = lo + (hi - lo) / 2;
+                    if(arr[mid] == x) {
+                        flag = true; // meaning target found
+                        break;
+                    } 
+                    else if (arr[mid] > x) hi = mid - 1;
+                    else lo = mid + 1;
+                }
+
+                if(flag == true) {
+                    lb = mid - 1;
+                    ub = mid + 1; 
+                    ans.push_back(x);
+                }
+                else {
+                    lb = hi;
+                    ub =  lo; 
+                }
+    
+                while( ans.size() != k) {
+                    if(lb < 0) {
+                        ans.push_back(arr[ub]);
+                        ub++;
+                    }
+                    else if(ub > n-1) {
+                        ans.push_back(arr[lb]);
+                        lb--;
+                    }
+
+                    else if(abs(x - arr[lb]) >= abs(x - arr[ub])) {
+                        ans.push_back(arr[lb]);
+                        lb--;
+                    } 
+                    else {
+                        ans.push_back(arr[ub]);
+                        ub++;
+                    }
+        
+                }
+            }
+            sort(ans.begin(), ans.end());
+            return ans;
+        }
+    };
+
+*/
 
 
+/* 
+
+
+
+
+#include<iostream>
+using namespace std;
+
+int main () {
+    int sqrt = 41;
+    int low = 0;
+    int high = 41;
+    bool flag = true;
+    int mid = 0;
+    while (low <= high) 
+    {
+        mid = low + (high - low) / 2;
+        if(mid*mid == sqrt) {
+            flag = false;
+            cout<<mid;
+            break;
+        }
+        else if((mid*mid) > sqrt) high = mid - 1;
+        else low = mid + 1;
+        
+    }
+    if(flag == true)  {
+        cout<<high;
+    }
+    return 0;
+}
+*/
+
+
+/* 
+#include<iostream>
+using namespace std;
+
+int main () {
+    int c = 4;
+    int sqrt = c;
+    int low = 0;
+    int high = c;
+    bool main = false;
+    bool flag = false;
+    while (low <= high)  {
+        int mid = low + (high - low) / 2;
+        if(mid*mid == sqrt) {
+            flag = true;
+            sqrt = mid;
+            break;
+        }
+        else if((mid*mid) > sqrt) high = mid - 1;
+        else low = mid + 1;
+    } 
+    if (flag == false) {
+        sqrt = high;
+    }
+    for(int i = 0; i < sqrt; i++ ) {
+        int j = i+1;
+        if(((i*i)+(j*j)) == c ) main =  true; 
+    }
+    cout<<main;
+    return 0;
+}
+*/
+
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+int main () {
+    int x = 2;
+    int c = sqrt(x);
+    cout<<c;
+    return 0;
+}
