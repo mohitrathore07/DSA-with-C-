@@ -949,14 +949,82 @@ int main () {
 }
 */
 
-
+// binary search class plan - questions 
+/*  - FINDING AN ELEMENT
 #include<iostream>
-#include<math.h>
+#include<vector>
+using namespace std;
+
+int main() {
+    vector <int>v = {-1,0,3,5,9,12};
+    int target = 9;
+
+    int lo = 0;
+    int hi = v.size() - 1;
+    while (lo <= hi)
+    {
+        int mid = lo + (hi - lo) / 2;
+        if(v[mid] == target) {
+            cout<<"target found at: "<<mid;
+            break;
+        }
+        else if(v[mid] < target) lo = mid+1;
+        else hi = mid - 1;
+    }
+    
+    return 0;
+}
+    */
+
+
+/*
+// lower bound
+#include<iostream>
+#include<vector>
 using namespace std;
 
 int main () {
-    int x = 2;
-    int c = sqrt(x);
-    cout<<c;
+    vector<int> v = {4,6,10,12,18,18,20,20,30,45};
+    int x = 20;
+    int lo = 0;
+    int hi = v.size()-1;
+    int ans = -1;
+    while (lo <= hi)
+    {
+        int mid = lo + (hi - lo) / 2;
+        if(v[mid] == x) {
+            ans = mid;
+            hi = mid - 1;
+        } 
+        else if(v[mid] < x) lo = mid+1;
+        else hi = mid - 1;
+    }
+    cout<<"lower bound for: "<<x<<" is "<<ans;
+    return 0;
+}
+*/
+
+// upper bound
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main () {
+    vector<int> v = {4,6,10,12,18,18,20,20,30,45};
+    int x = 20;
+    int lo = 0;
+    int hi = v.size()-1;
+    int ans = -1;
+    while (lo <= hi)
+    {
+        int mid = lo + (hi - lo) / 2;
+        if(v[mid] == x) {
+            ans = mid;
+            lo = mid + 1;
+        } 
+        else if(v[mid] < x) lo = mid+1;
+        else hi = mid - 1;
+    }
+    cout<<"lower bound for: "<<x<<" is "<<ans;
     return 0;
 }

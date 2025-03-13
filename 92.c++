@@ -1,6 +1,6 @@
 // 02-03-2025
 
-/* 
+/*
 // search in a rotated array - leetcode 33
 
 class Solution {
@@ -29,8 +29,8 @@ class Solution {
                 }
                 else if(nums[mid] > nums[hi]) lo = mid + 1;
                 else hi = mid - 1;
-            }   
-    
+            }
+
             if(pivot == -1) {
                 lo = 0;
                 hi = n - 1;
@@ -41,10 +41,10 @@ class Solution {
                 }
                 else if (nums[mid] > target) hi = mid - 1;
                 else lo = mid + 1;
-               }   
+               }
                return -1;
-            } 
-    
+            }
+
             if(target >= nums[0] && target <= nums[pivot - 1] ) {
                 lo = 0;
                 hi = pivot;
@@ -55,7 +55,7 @@ class Solution {
                 }
                 else if (nums[mid] > target) hi = mid - 1;
                 else lo = mid + 1;
-               }  
+               }
             }
             else {
                 lo = pivot;
@@ -74,8 +74,7 @@ class Solution {
 };
 */
 
-
-/* 
+/*
 // Find K closest element - 658 leetcode
 class Solution {
     public:
@@ -90,7 +89,7 @@ class Solution {
             int mid = -1;
             if(x < arr[0]) {
                 int i = 0;
-                while (ans.size() != k) 
+                while (ans.size() != k)
                 {
                     ans.push_back(arr[i]);
                     i++;
@@ -98,7 +97,7 @@ class Solution {
             }
             else if (x > arr[n-1]) {
                 int i = n-1;
-                while (ans.size() != k) 
+                while (ans.size() != k)
                 {
                     ans.push_back(arr[i]);
                     i--;
@@ -110,21 +109,21 @@ class Solution {
                     if(arr[mid] == x) {
                         flag = true; // meaning target found
                         break;
-                    } 
+                    }
                     else if (arr[mid] > x) hi = mid - 1;
                     else lo = mid + 1;
                 }
 
                 if(flag == true) {
                     lb = mid - 1;
-                    ub = mid + 1; 
+                    ub = mid + 1;
                     ans.push_back(x);
                 }
                 else {
                     lb = hi;
-                    ub =  lo; 
+                    ub =  lo;
                 }
-    
+
                 while( ans.size() != k) {
                     if(lb < 0) {
                         ans.push_back(arr[ub]);
@@ -138,12 +137,12 @@ class Solution {
                     else if( abs(x - arr[lb]) <= abs(x - arr[ub])) {
                         ans.push_back(arr[lb]);
                         lb--;
-                    } 
+                    }
                     else {
                         ans.push_back(arr[ub]);
                         ub++;
                     }
-        
+
                 }
             }
             sort(ans.begin(), ans.end());
