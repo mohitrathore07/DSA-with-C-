@@ -1004,6 +1004,7 @@ int main () {
 }
 */
 
+/* 
 // upper bound
 #include<iostream>
 #include<vector>
@@ -1026,5 +1027,46 @@ int main () {
         else hi = mid - 1;
     }
     cout<<"lower bound for: "<<x<<" is "<<ans;
+    return 0;
+}
+*/
+
+/*
+#include<iostream>
+using namespace std;
+
+int main () {
+    int arr[] = {0,1,1,1};
+
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int lo = 0;
+    int hi = n - 1 ;
+    int mid = -1;
+    bool flag = false;
+    while (lo <= hi)
+    {
+        mid = lo + (hi - lo) / 2; 
+        if(arr[mid] == 1 && arr[mid - 1] == 0) {
+            flag = true;
+            break;
+        }
+        else if(arr[mid] == 0){
+            lo = mid + 1;
+        }
+        else {
+            hi = mid - 1;
+        }
+    }
+    if(flag) cout<<"no of 1's is: "<<n-mid;
+    else cout<<0;
+    return 0;
+}
+    */
+
+#include<iostream>
+using namespace std;
+
+int main () {
+    cout<<5/2;
     return 0;
 }
