@@ -109,7 +109,7 @@ int main () {
 using namespace std;
 
 // 1 3 5 7 8 10 12  -> 31 days
-// 4 6 9 22  -> 30 days
+// 4 6 9 11  -> 30 days
 // 28  -> 28 days
 
 int main () {

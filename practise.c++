@@ -1065,12 +1065,13 @@ int main () {
 
 
 
-    #include <iostream>
-    using namespace std;
     
-    int main () {
-        char ch = '9';
-        int num = ch - '0';
-        cout<<num;
-        return 0;
-    }
+
+#include <iostream>
+using namespace std;
+int main () { 
+    int x = 2;
+    x= 15 > 8 ? 10 : 1 != 2 < 5 ? 20 : 30; 
+    cout<<"Value of x: "<<x<<endl;
+    return 0;
+}
