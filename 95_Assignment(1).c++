@@ -109,31 +109,80 @@ int main() {
 }
 */
 
+/* Q - 5 Perfect Square  or not 
+
 #include<iostream>
 #include<vector>
 using namespace std;
 
 int main() {
-    vector <int> v = {1, 1, 2, 3, 4};
+    int n = 45;
 
-    int lo = 1;
-    int n = v.size();
-    int hi = n - 1;
-    int ans = -1;
+    int lo = 0;
+    int hi = n;
+    bool flag = false;
     while (lo <= hi)
     {
         int mid = lo + (hi - lo) / 2;
-        if( (v[mid] == v[mid-1]) || v[mid] == v[mid+1]) {
-            ans = v[mid];
+        if( (mid*mid)==n) {
+            flag = true;
             break;
         }
-        else if(v[mid] < mid ) {
+        else if ((mid*mid)>n) {
             hi = mid - 1;
         }
         else {
             lo = mid + 1;
         }
     }
-    cout<<ans;
+    if(flag) {
+        cout<<"perfect square";
+    } else {
+        cout<<"not a perfect square";
+    }
+    return 0;
+}
+*/
+
+// Q - 6
+
+/*
+
+*/
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main () {
+    vector<vector<int>> v = {{1 , 3 , 5 ,7} , {10 , 11 , 16 , 20} , {23,30,34,60}}; 
+    int x = 3;
+    int n =  v.size()-1;
+    int lo = 0;
+    int hi = n;
+
+    bool flag = false;
+
+    for(int i = 0; i <= n;i++) {
+        lo = 0;
+        hi = n;
+
+        while (lo<=hi)
+        {
+            int mid = lo + (hi - lo) / 2;
+            if(v[i][mid] == x) {
+                flag = true;
+                break;
+            }
+            else if(v[i][mid] > x){
+                hi = mid-1;
+            }
+            else {
+                lo = hi + 1;
+            }
+         }   
+    }
+    if(flag) cout<<"present";
+    else cout<<"absent";
     return 0;
 }
