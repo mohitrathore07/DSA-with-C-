@@ -63,12 +63,12 @@ int main () {
     cin>>n;
     int arr[n];
     int min = INT_MAX;
-    for(int i = 1; i <= n-1; i++) {
+    for(int i = 0; i <= n-1; i++) {
         cin>>arr[i];
     
     }
-    for(int i = 1; i <= n-1; i++) {
-        if(min > arr[i]) {
+    for(int i = 0; i <= n-1; i++) {
+        if(min < arr[i]) {
             min = arr[i];
         }
     }
