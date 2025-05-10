@@ -1063,15 +1063,60 @@ int main () {
 }
     */
 
+/* 
 
-
-    
-
+*       * 
+  *   * 
+    *
+  *   *   
+*       *
 #include <iostream>
 using namespace std;
-int main () { 
-    int x = 2;
-    x= 15 > 8 ? 10 : 1 != 2 < 5 ? 20 : 30; 
-    cout<<"Value of x: "<<x<<endl;
+
+int main () {
+    int n;
+    cout<<"no of rows: ";
+    cin>>n;
+
+    for(int i = 1; i <= n; i++) {
+        for(int j = 1; j <= n; j++) {
+            if(i == j || i+j == n+1) cout<<i<<j;
+            else cout<<" ";
+        }
+        cout<<endl;
+    }    
+    return 0;
+}
+
+*/
+
+
+/* *
+   1
+  121
+ 12321
+1234321 
+*/
+
+#include <iostream>
+#include <climits>
+using namespace std;
+
+int main () {
+    int n ;
+    cout<<"Enter the size of the array: ";
+    cin>>n;
+    int arr[n];
+    int min = INT_MAX;
+    for(int i = 1; i <= n-1; i++) {
+        cin>>arr[i];
+    
+    }
+    for(int i = 1; i <= n-1; i++) {
+        if(min > arr[i]) {
+            min = arr[i];
+        }
+    }
+    cout<<"Min is: "<<min;
     return 0;
 }

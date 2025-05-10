@@ -26,7 +26,7 @@ int main () {
 
 
 /* 
-// Q - 2
+// Q - 2 - min find
 #include <iostream>
 #include <climits>
 using namespace std;
