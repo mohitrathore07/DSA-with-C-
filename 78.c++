@@ -33,7 +33,7 @@ int main () {
     int n = 5; 
     int i = 1;
     printf(i,n);
-    return 0;n
+    return 0;
 }
 
 */

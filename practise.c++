@@ -1098,25 +1098,45 @@ int main () {
 1234321 
 */
 
-#include <iostream>
-#include <climits>
+#include<iostream>
+#include<string>
+#include<sstream>
+#include<vector>
+#include<algorithm>
 using namespace std;
 
-int main () {
-    int n ;
-    cout<<"Enter the size of the array: ";
-    cin>>n;
-    int arr[n];
-    int min = INT_MAX;
-    for(int i = 0; i <= n-1; i++) {
-        cin>>arr[i];
-    
+int main() {
+    string str = "raghav garg is a maths a teacher as well as a DSA mentor";
+    stringstream ss(str);
+    string temp;
+
+    vector<string> v;
+
+    while(ss>>temp) {
+        v.push_back(temp);
     }
-    for(int i = 0; i <= n-1; i++) {
-        if(min > arr[i]) {
-            min = arr[i];
-        }
+
+    sort(v.begin() , v.end());
+
+    for(string t: v) {
+        cout<<t<<" ";
     }
-    cout<<"Min is: "<<min;
+
+    // int maxCount = 1;
+    // int count = 1;
+    // for(int i = 1; i < v.size(); i++) {
+    //     if(v[i]==v[i-1]) count++;
+    //     else count = 1;
+    //     maxCount = max(maxCount , count);
+    // }
+
+    // for(int i = 1; i < v.size(); i++) {
+    //     if(v[i]==v[i-1]) count++;
+    //     else count = 1;
+    //     if(count == maxCount) {
+    //         cout<<v[i]<<" "<<count <<endl;
+    //     }
+    // }
+
     return 0;
 }
