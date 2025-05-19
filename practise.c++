@@ -1098,45 +1098,28 @@ int main () {
 1234321 
 */
 
+
 #include<iostream>
-#include<string>
-#include<sstream>
-#include<vector>
-#include<algorithm>
 using namespace std;
 
-int main() {
-    string str = "raghav garg is a maths a teacher as well as a DSA mentor";
-    stringstream ss(str);
-    string temp;
-
-    vector<string> v;
-
-    while(ss>>temp) {
-        v.push_back(temp);
+int main () {
+    int arr[] = {1,1,2,3,5,6,8,9,12};
+    int n = 8;
+    int low =  0; 
+    int high = n - 1;
+    int ans = -1;
+    while(low <= high)
+    {
+        int mid = low + (high - low) / 2;
+        if(arr[mid] ==  mid) {
+            low = mid+1;
+        }
+        else {
+            ans = mid;
+            high = mid - 1;
+        }
     }
-
-    sort(v.begin() , v.end());
-
-    for(string t: v) {
-        cout<<t<<" ";
-    }
-
-    // int maxCount = 1;
-    // int count = 1;
-    // for(int i = 1; i < v.size(); i++) {
-    //     if(v[i]==v[i-1]) count++;
-    //     else count = 1;
-    //     maxCount = max(maxCount , count);
-    // }
-
-    // for(int i = 1; i < v.size(); i++) {
-    //     if(v[i]==v[i-1]) count++;
-    //     else count = 1;
-    //     if(count == maxCount) {
-    //         cout<<v[i]<<" "<<count <<endl;
-    //     }
-    // }
-
+    cout<<ans;
+    
     return 0;
 }
