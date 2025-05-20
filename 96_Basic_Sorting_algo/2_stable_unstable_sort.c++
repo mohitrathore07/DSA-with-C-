@@ -41,9 +41,6 @@ int main() {
 
 // push zeros to end while maintaining the relative order same
 
-#include <iostream>
-#include <string>
-using namespace std;
 
 int main() {
     int ary[] = {5,0,1,2,0,0,4,0,3};
