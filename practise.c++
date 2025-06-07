@@ -194,6 +194,7 @@ int main() {
 
 */
 
+/*
 #include<iostream>
 #include<string>
 using namespace std;
@@ -221,3 +222,88 @@ int main () {
     // cout<<tp1<<" "<<tp2;
     return 0;
 }
+
+*/
+/* 
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int merge(vector<int>& a , vector<int>& b, vector<int>& arr) {
+    int count = 0;
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    
+    while (i < a.size() && j < b.size())
+    {
+        if(a[i] > b[j]) count++;
+        i++;
+        j++;
+    }
+    return count;
+}
+
+int mergeSort(vector<int>& arr ) {
+    int n = arr.size();
+    if(n==1) return 0; 
+    int s1 = n/2 , s2  = n-n/2;
+    vector<int> a(s1) , b(s2);
+
+    for (int i = 0; i < s1; i++)
+    {
+        a[i] = arr[i];
+    }
+    
+    for (int i = 0; i < s2; i++)
+    {
+        b[i] = arr[i+s1];
+    }
+    int count = 0;
+    mergeSort(a);
+    mergeSort(b);
+
+    merge(a,b,arr );
+
+   return count;
+}
+
+int main () {
+
+    vector<int> arr = {5,1,8,2,3};
+    
+    int count = mergeSort(arr);
+    cout<<count<<" ";
+}
+
+*/
+
+/*
+// rotate string by k place
+#include <iostream>
+using namespace std;
+
+int main () {
+    string str = "abc";
+    string ans = "";
+
+    int k = 2;
+    while (k > 0)
+    {
+        char s = str[0];
+        int i = 0;
+        while (i < str.length()-1)
+        {
+            str[i] = str[i+1];
+            i++;
+        }
+        str.pop_back();
+        str.push_back(s);
+        k--;
+    }
+    
+    cout<<str<<" ";
+}
+
+*/

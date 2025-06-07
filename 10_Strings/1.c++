@@ -38,3 +38,34 @@ int main () {
     cout<<name;
     return 0;
 }
+
+
+
+/*
+// rotate string by k place
+#include <iostream>
+using namespace std;
+
+int main () {
+    string str = "abc";
+    string ans = "";
+
+    int k = 2;
+    while (k > 0)
+    {
+        char s = str[0];
+        int i = 0;
+        while (i < str.length()-1)
+        {
+            str[i] = str[i+1];
+            i++;
+        }
+        str.pop_back();
+        str.push_back(s);
+        k--;
+    }
+    
+    cout<<str<<" ";
+}
+
+*/
