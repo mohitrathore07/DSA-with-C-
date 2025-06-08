@@ -163,3 +163,64 @@ int main () {
     return 0;
 }
 */
+
+/*  796
+class Solution {
+public:
+    bool rotateString(string s, string goal) {
+    if(s.length() != goal.length()) return false;
+
+    int k = s.length();
+    while (k > 0)
+    {
+        char c = s[0];
+        int i = 0;
+        while (i < s.length()-1)
+        {
+            s[i] = s[i+1];
+            i++;
+        }
+        s.pop_back();
+        s.push_back(c);
+        if(s == goal) return true;
+        k--;
+    }
+
+    return false;
+    }
+};
+*/
+
+//1832. Check if the Sentence Is Pangram
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    string  str = "leetcode";
+
+    if(str.length() < 26) {
+        cout << "not a pangram";
+        return 0;
+    };
+
+    vector<int> a(26,0);
+    int i = 0;
+
+    for(char c: str)
+    {
+        if(c >= 'a' && c <= 'z' ) {
+            a[c - 'a'] = 1;
+        }
+    }
+
+     for (int i : a) {
+        if (i == 0) {
+            cout << "not a pangram";
+            return 0;
+        }
+    }
+
+    cout << "pangram";
+    return 0;
+}

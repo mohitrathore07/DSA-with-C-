@@ -307,3 +307,30 @@ int main () {
 }
 
 */
+
+/* 
+#include <iostream>
+using namespace std;
+
+int main () {
+    string str = "gcmbf";
+    string str2 = "fgcmb";
+
+    int k = 2;
+    while (k > 0)
+    {
+        char s = str[0];
+        int i = 0;
+        while (i < str.length()-1)
+        {
+            str[i] = str[i+1];
+            i++;
+        }
+        str.pop_back();
+        str.push_back(s);
+        k--;
+    }
+    
+    cout<<str<<" ";
+}
+*/
