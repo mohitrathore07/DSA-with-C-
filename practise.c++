@@ -333,50 +333,97 @@ int main () {
     
     cout<<str<<" ";
     */
-   
-   
+
+/* 
 #include <iostream>
+#include <vector>
 using namespace std;
 
-int partition(int arr[]  , int si  , int ei ){
-    int pivot = arr[(si+ei)/2];
-    int count = 0;
+int main () {
+    vector<int> v = {7,12,11,8,9};
+    int n = v.size();
+    int i = 0;
 
-    for (int i = si; i <= ei ; i++)
+
+    while (i < n )
     {
-        if(i == (si+ei)/2) continue;
-        if(arr[i] <= pivot) count++;
-    }
-    int pivotIdx = count + si;
-    swap(arr[(si+ei)/2], arr[pivotIdx]);
-
-    int i = si;
-    int j = ei;
-
-    while (i < pivotIdx && j < pivotIdx)
-    {
-        if(arr[i] <= pivot) i++;
-        if(arr[j] >= pivot) j--;
-        else if( arr[i]  > pivot && arr[j] <= pivot) {
-            swap(arr[i] , arr[j]);
+        if(v[i] <= 0)  {
             i++;
-            j--;
+            continue;
         }
-    } 
-    return pivotIdx;
+        int correctPos = v[i] - 1;
+        if(correctPos == i) i++;
+        else swap(v[i] , v[correctPos]);
+    }
+    bool flag = true;
+    for (int i = 0; i < n; i++)
+    {
+        if(v[0] == 0) v[0] += 1;
+        if(i+1 != v[i]) {
+            flag = false;
+            cout<<"smallest missing is: "<<i+1;
+            break;
+        } 
+    }
+    if(flag) cout<<n;
+
+   
+    
+    return 0;
 }
-int kthsmallest(int arr[] ,int  k , int si  , int ei ) {
-    int pi = partition(arr, si , ei);
-    if(pi+1 == k) return arr[pi];
-    else if(pi+1 < k) return kthsmallest(arr, k , pi+1 , ei);
-    else  return kthsmallest(arr, k, si , pi-1);
-}
+    */
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
 
 int main () {
-    int arr[] = {5,1,8,7,6,3,4};
-    int k = 4;
-    int n =  sizeof(arr) / sizeof(arr[0]);
+    string s = "abccccdd";
+    vector<int> v(26,0);
 
-    int result = kthsmallest(arr , k , 0 , n-1 );    
-    cout<<result;
+    int i=0;
+    while (s[i] != '\0')
+    {
+        char c = s[i];
+        v[c - 'a'] = v[c- 'a'] + 1;    
+    }
+
+    string ans = "";
+
+    for (int i = 0; i < v.size(); i++)
+    {
+        if(v[i] <= 1) continue;
+            int mid = v[i]/2;
+            while (mid > 0)
+            {
+                ans += (char)(i+97);
+                mid--;
+            }
+            string add = "";
+            while (v[i] > 0)
+            {
+                add += (char)(i+97);
+                v[i] = v[i] - 1; 
+            }
+            ans += add;
+    }
+    for (int i = 0; i < v.size(); i++)
+    {
+        if(v[i] == 0) continue;
+        if(ans.length() % 2 == 0) {
+            string part = ans.substr((ans.length()/2) - 1);
+            ans += v[i];
+            ans+=part;
+        }
+        else {
+             string part = ans.substr((ans.length()/2));
+            ans += v[i];
+            ans+=part;
+        } 
+    }
+
+    cout<<ans;
+    return 0;
 }

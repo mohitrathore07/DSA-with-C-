@@ -191,6 +191,7 @@ public:
 };
 */
 
+/*
 //1832. Check if the Sentence Is Pangram
 #include <iostream>
 #include <vector>
@@ -198,29 +199,204 @@ using namespace std;
 
 int main() {
     string  str = "leetcode";
-
+    
     if(str.length() < 26) {
         cout << "not a pangram";
         return 0;
     };
-
+    
     vector<int> a(26,0);
     int i = 0;
-
+    
     for(char c: str)
     {
         if(c >= 'a' && c <= 'z' ) {
             a[c - 'a'] = 1;
         }
     }
-
-     for (int i : a) {
+    
+    for (int i : a) {
         if (i == 0) {
             cout << "not a pangram";
             return 0;
         }
     }
-
+    
     cout << "pangram";
     return 0;
 }
+*/
+
+
+/*
+// 268 leetcode
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {0,1,3};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    
+    int expectedSum = n * (n + 1) / 2;
+    int actual = 0;
+    int i = 0;
+    while (i<n)
+    {
+        actual  += arr[i];
+        i++;
+    }
+    cout<<"Missing num is: "<< expectedSum - actual;
+    return 0;
+} 
+*/
+
+/* 
+// another method of leetcode 268 extra space
+#include <iostream>
+#include<vector>
+using namespace std;
+
+int main() {
+    vector<int> nums = {3,0,1};
+    int n = nums.size();
+    vector<bool> check(n+1 , false);
+    
+    for (int i = 0; i < n; i++)
+    {
+        int ele = nums[i];
+        check[ele] = true;
+    }
+    \
+    
+    bool flag = true;
+    for (int i = 0; i < n; i++)
+    {
+        if(check[i] == false) {
+            cout<<"missing is: "<<i;
+            flag = false;
+            break; 
+        }
+    }
+    if(flag == true) cout<<"all set";
+    return 0;
+}
+*/
+
+/*
+// 268 using cyclic sort - O(n) hi hogi T.C.
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main() {
+    vector<int> v = {3,0,1};
+    int n = v.size();
+    int i  = 0;
+   while (i < n)
+   {
+     int correctIdx = v[i];
+     if(correctIdx == i || v[i] == n) i++;
+     else swap(v[i] , v[correctIdx]);
+   }
+   bool flag = false;
+   for(int i = 0 ; i < n ; i++) {
+    if(v[i] != i) {
+        cout<<"missing is: "<<i;
+        flag = true;
+        break;
+    }
+   }
+   if(flag == false) {
+    cout<<n;
+   } 
+
+ 
+   
+   return 0;
+}
+*/
+
+/*
+// leetcode 287
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        int n = nums.size();
+        int i = 0;
+        while(i < n) {
+            int correctIdx = nums[i] - 1;
+            if(correctIdx == i) i++; 
+            if (nums[correctIdx] == nums[i]) return nums[i];
+            else swap(nums[correctIdx] , nums[i]);
+        }
+        return -1;
+    }
+};
+*/
+
+/*
+class Solution {
+public:
+    vector<int> findDisappearedNumbers(vector<int>& nums) {
+        int n = nums.size();
+        vector<int>ans;
+
+        int i = 0;
+        while(i < n) {
+            int correctIdx = nums[i] - 1;
+            if((correctIdx == i) || (nums[correctIdx] == nums[i])) {
+                i++;
+            }
+            else swap(nums[i], nums[correctIdx]);
+        }
+
+        for(int i = 0; i < n; i++) {
+            if(i != (nums[i]-1)) ans.push_back(i+1);
+        }
+        return ans;
+    }
+};
+
+*/
+/*
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main() {
+    vector <int>v(26,0);
+    string order ="hucw";
+    string s =  "utzoampdgkalexslxoqfkdjoczajxtuhqyxvlfatmptqdsochtdzgypsfkgqwbgqbcamdqnqztaqhqanirikahtmalzqjjxtqfnh";
+    for(int i = 0; i < s.length() ; i++) {
+        char c = s[i];
+        int idx =  c - 'a';
+        v[idx] = v[idx]+1;
+    }
+    int i = 0;
+    string ans = "";
+    while (order[i] != '\0') {
+        char c = order[i];
+        int idx =  c - 'a';
+        int l = v[idx];
+        while(l > 0) {
+            ans+=c;
+            l--;
+        }
+        v[idx] = -1;
+        i++;
+    }
+    for(int i: v) cout<<i<<" ";
+    cout<<endl;
+
+    for(int i = 0; i < v.size(); i++) {
+        int j = v[i];
+        char c =  (char)(i + 'a');
+        while(j > 0) {
+             ans += c;
+             j--;
+        }
+    }
+    cout<<ans;
+}
+    */
