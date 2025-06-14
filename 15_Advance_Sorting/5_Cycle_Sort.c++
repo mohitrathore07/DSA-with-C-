@@ -110,44 +110,25 @@ int main() {
    return 0;
 }*/
 
-/*
-#include<iostream>
-#include<vector>
-using namespace std;
-
-int main() {
-    vector <int> nums = {1,3,4,2,2,4};
-    int n = nums.size();
-    int i = 0;
-    while(i < n) {
-        int correctIdx = nums[i] - 1;
-        if(correctIdx == i) i++; 
-        if (nums[correctIdx] == nums[i]) {
-            cout<<nums[i]<<" ";
-            i++;
-        }
-        else swap(nums[correctIdx] , nums[i]);
-    }
-    return 0;
-}
-*/
-
+ 
 /* 
-#include<iostream>
-#include<vector>
-using namespace std;
-
-int main() {
-    vector <int> nums = {1,3,4,2,2,4};
-    int n = nums.size();
-    int i = 0;
-    while(i < n) {
-       int correctIdx = nums[i] - 1;
-            if(correctIdx == i || nums[correctIdx] == nums[i]) i++;
-            else swap(nums[i], nums[correctIdx]);
+class Solution {
+    public:
+    vector<int> findDuplicates(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> ans;
+        if(n <= 1) return ans;
+        int i = 0;
+        while( i < n) {
+            int correctPos = nums[i] - 1;
+            if(correctPos == i  || (nums[i] <= 0 && nums[i] >= n) || nums[i] == nums[correctPos]) i++;
+            else swap(nums[correctPos] , nums[i]);
+        } 
+        for (int i = 0; i < n; i++)
+        {
+            if(nums[i] != i+1) ans.push_back(nums[i]);
+        }
+        return ans;
     }
-    for(int i: nums) {
-        cout<<i<<" ";
-    }
-    return 0;
-}*/
+};
+*/
