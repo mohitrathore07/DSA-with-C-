@@ -373,7 +373,7 @@ int main () {
 }
     */
 
-
+/*
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -382,32 +382,32 @@ using namespace std;
 int main () {
     string s = "abccccdd";
     vector<int> v(26,0);
-
+    
     int i=0;
     while (s[i] != '\0')
     {
         char c = s[i];
         v[c - 'a'] = v[c- 'a'] + 1;    
     }
-
+    
     string ans = "";
 
     for (int i = 0; i < v.size(); i++)
     {
         if(v[i] <= 1) continue;
-            int mid = v[i]/2;
-            while (mid > 0)
-            {
-                ans += (char)(i+97);
-                mid--;
-            }
-            string add = "";
-            while (v[i] > 0)
-            {
-                add += (char)(i+97);
-                v[i] = v[i] - 1; 
-            }
-            ans += add;
+        int mid = v[i]/2;
+        while (mid > 0)
+        {
+            ans += (char)(i+97);
+            mid--;
+        }
+        string add = "";
+        while (v[i] > 0)
+        {
+            add += (char)(i+97);
+            v[i] = v[i] - 1; 
+        }
+        ans += add;
     }
     for (int i = 0; i < v.size(); i++)
     {
@@ -418,12 +418,42 @@ int main () {
             ans+=part;
         }
         else {
-             string part = ans.substr((ans.length()/2));
+            string part = ans.substr((ans.length()/2));
             ans += v[i];
             ans+=part;
         } 
     }
-
+    
     cout<<ans;
+    return 0;
+}
+*/
+// 4,3,2,7,8,2,3,1
+
+
+#include<iostream>
+#include<vector>
+using namespace std; 
+
+int main() {
+    vector<int> nums = {1,1,2};
+    vector<int> ans;
+    int n = nums.size();
+    int i = 0;
+    while (i < nums.size())
+    {
+        int correctPos = nums[i] - 1;
+        if(correctPos == i  || (nums[i] <= 0 && nums[i] >= n) || nums[i] == nums[correctPos]) i++;
+        else swap(nums[correctPos] , nums[i]);
+    }
+
+    
+    for (int i = 0; i < n; i++)
+    {
+        if(nums[i] != i+1) ans.push_back(nums[i]);
+    }
+    
+    for(int i : ans) cout<<i<<" ";
+    
     return 0;
 }
