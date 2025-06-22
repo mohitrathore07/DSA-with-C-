@@ -430,7 +430,7 @@ int main () {
 */
 // 4,3,2,7,8,2,3,1
 
-
+/*
 #include<iostream>
 #include<vector>
 using namespace std; 
@@ -446,7 +446,7 @@ int main() {
         if(correctPos == i  || (nums[i] <= 0 && nums[i] >= n) || nums[i] == nums[correctPos]) i++;
         else swap(nums[correctPos] , nums[i]);
     }
-
+    
     
     for (int i = 0; i < n; i++)
     {
@@ -455,5 +455,36 @@ int main() {
     
     for(int i : ans) cout<<i<<" ";
     
+    return 0;
+}
+*/
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int maxLen = 0;
+    int currLen = 1;  // Start with 1 to count the current element
+
+    for (int i = 1; i < n; i++) {
+        if (a[i - 1] > a[i]) {
+            currLen++;
+        } else {
+            maxLen = max(maxLen, currLen);
+            currLen = 1;  // Reset count
+        }
+    }
+
+    maxLen = max(maxLen, currLen);  // Check after loop ends
+
+    cout << "Length of the longest strictly decreasing subarray: " << maxLen << endl;
     return 0;
 }
