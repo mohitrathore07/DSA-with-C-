@@ -400,3 +400,112 @@ int main() {
     cout<<ans;
 }
     */
+
+
+
+// leetcode 238 product of array except itself
+
+// m - 1 out of 3   - we will use 3 vectors in this method
+/*
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> pref(n);
+        vector<int> suff(n);
+        vector<int> ans(n);
+
+        // prefix product array
+        int p = nums[0];
+        pref[0] = 1;
+        for(int i = 1; i < n; i++) {
+            pref[i] = p;
+            p *= nums[i];
+        }
+
+        // suffix product array
+        p = nums[n-1];
+        suff[n-1] = 1;
+        for(int i = n-2; i >= 0; i--) {
+            suff[i] = p;
+            p *= nums[i];
+        }
+
+        // ans array
+        for(int i = 0; i < n; i++) {
+            ans[i] = pref[i] * suff[i];
+        }
+        return ans;
+    }
+}; 
+*/
+
+
+
+/*
+// m - 2 out of 3   - we will use 2 vectors in this method
+
+    class Solution {
+    public:
+        vector<int> productExceptSelf(vector<int>& nums) {
+            int n = nums.size();
+            vector<int> pref(n);
+            vector<int> suff(n);
+            
+
+            // prefix product array
+            int p = nums[0];
+            pref[0] = 1;
+            for(int i = 1; i < n; i++) {
+                pref[i] = p;
+                p *= nums[i];
+            }
+
+            // suffix product array
+            p = nums[n-1];
+            suff[n-1] = 1;
+            for(int i = n-2; i >= 0; i--) {
+                suff[i] = p;
+                p *= nums[i];
+            }
+
+            //  array
+            for(int i = 0; i < n; i++) {
+                suff[i] = pref[i] * suff[i];
+            }
+            return suff;
+        }
+    };
+*/
+
+/*
+ quite good way
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> pref(n);
+        vector<int> suff(n);
+        
+
+        // prefix product array
+        int p = nums[0];
+        pref[0] = 1;
+        for(int i = 1; i < n; i++) {
+            pref[i] = p;
+            p *= nums[i];
+        }
+
+        // suffix product array
+        p = nums[n-1];
+        for(int i = n-2; i >= 0; i--) {
+            pref[i] *= p;
+            p *= nums[i];
+        }
+
+        return pref;
+    }
+};
+
+
+*/
