@@ -508,4 +508,63 @@ public:
 };
 
 
+*/      
+
+/*
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main () {
+    vector <int> v = {1,7,3,6,5,6};
+    
+    for (int i = 1; i <v.size(); i++)
+    {
+        v[i] = v[i] + v[i-1];
+    }
+    // int idx = -1;
+    // for (int i = 0; i < v.size(); i++)
+    // {
+        //     if((2*v[i]) == v[v.size()-1]) {
+            //         idx = i;
+            //         break;
+            //     }
+            // }
+            // if(idx != -1) cout<<"yes it can be partitioned: "<< idx;
+            // else cout<<"no it can be partitioned ";
+            
+            for(int i: v) {
+                cout<<i<<" ";
+            }
+            return 0;
+        }
 */
+/* leetcode 724 
+class Solution {
+    public:
+    int pivotIndex(vector<int>& nums) {
+        int n = nums.size();
+        int totalSum = 0;
+        for(int i : nums) totalSum +=i;
+        for(int i = 0; i < n; i++) {
+            int leftSum = 0 , rightSum = 0;
+            for(int j = 0; j < i; j++) leftSum += nums[j];
+            rightSum = totalSum - leftSum - nums[i];
+            if(leftSum == rightSum) return i;
+        }
+        return -1;
+    }
+};
+*/
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int digits[]  = {1,2,3};
+    int num = 0;
+    for (int i: digits) num =  num * 10 + i;
+    cout<<"nums is: "<<num;
+    return 0;
+}
