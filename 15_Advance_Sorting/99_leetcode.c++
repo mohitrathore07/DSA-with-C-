@@ -74,7 +74,7 @@ public:
     {
         if(a[i] == '1' && b[j] == '1' && carry == '1') {
             carry = '1';
-            c = '1' + c;
+            c = '1' + c;   
         }
         else if(a[i] == '1' && b[j] == '1') {
             carry = '1';
