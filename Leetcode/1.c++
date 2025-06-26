@@ -558,13 +558,108 @@ class Solution {
 */
 
 
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     string n1 = "1100";
+//     string n2 = "0110";
+    
+
+//     char carry = '0';
+//     if(n1.length() > n2.length()) swap(n2 , n1);
+//     int i = n1.length()-1;
+//     int j = n2.length()-1;
+
+//     while (j >= 0)
+//     {
+//        if(i < 0)  {
+//             if(n2[j] == '1' && carry == '1') {
+//                 n2[j] = '0';
+//                 carry = '1';
+//             }
+
+//        }
+//        else if(n1[i] == '1' && n2[j] == '1' && carry == '1') {
+//             carry = '1';
+//             n2[j] = '1';
+//         } 
+//         else if(n1[i] == '1' && n2[j] == '1') {
+//             carry = '1';
+//             n2[j] = '0';
+//         } 
+//         else {
+//             if(carry == '1' &&  (n2[j] == '1' || n1[i] == '1')) {
+//                 carry = '1';
+//                 n2[j] = '0';
+//             }
+//             else if( n2[j] == '1' || n1[i] == '1') {
+//                 n2[j] = '1';
+//                 carry = '0';
+//             }
+//         }
+//     i--;
+//     j--;
+//     }
+    
+//     if(carry == '1') n2 = '1' + n2;
+//     cout<<"l is "<<n2;
+//     return 0;
+// }
+
+
+// leetcode 67
 #include <iostream>
 using namespace std;
 
 int main() {
-    int digits[]  = {1,2,3};
-    int num = 0;
-    for (int i: digits) num =  num * 10 + i;
-    cout<<"nums is: "<<num;
+    string a = "1010";
+    string b = "1011";
+    string c;
+    char carry = '0';
+
+    if(a.length() != b.length()) {
+        while (a.length()>b.length())
+        {
+            b = '0' + b;
+        }
+        
+        while (a.length()<b.length())
+        {
+            a = '0' + a;
+        }
+    }
+   
+    int i = a.length()-1;
+    int j = b.length()-1;
+
+    while ( i >= 0  || j >= 0)
+    {
+        if(a[i] == '1' && b[j] == '1' && carry == '1') {
+            carry = '1';
+            c = '1' + c;
+        }
+        else if(a[i] == '1' && b[j] == '1') {
+            carry = '1';
+            c = '0' + c;
+        }
+        else if((a[i] == '1' || b[j] == '1') && carry == '1') {
+            c = '0' + c;
+            carry = '1';
+        }
+        else {
+            if(a[i] == '1' || b[j] == '1')  {
+                c = '1' + c;
+            }
+            else {
+                c = carry + c;
+                carry = '0';
+            }
+        }
+        i--;
+        j--;
+    }
+    if(carry == '1') c = carry + c;
+    cout<<c;
     return 0;
 }
