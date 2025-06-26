@@ -458,6 +458,7 @@ int main() {
     return 0;
 }
 */
+/* 
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -465,15 +466,15 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-
+    
     vector<int> a(n);
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
-
+    
     int maxLen = 0;
     int currLen = 1;  // Start with 1 to count the current element
-
+    
     for (int i = 1; i < n; i++) {
         if (a[i - 1] > a[i]) {
             currLen++;
@@ -482,9 +483,22 @@ int main() {
             currLen = 1;  // Reset count
         }
     }
-
+    
     maxLen = max(maxLen, currLen);  // Check after loop ends
-
+    
     cout << "Length of the longest strictly decreasing subarray: " << maxLen << endl;
+    return 0;
+}
+
+*/
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() 
+{
+    int k = 25;
+    cout<<k / 10;
     return 0;
 }
