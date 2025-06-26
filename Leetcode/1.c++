@@ -608,14 +608,12 @@ class Solution {
 // }
 
 
-// leetcode 67
-#include <iostream>
-using namespace std;
-
-int main() {
-    string a = "1010";
-    string b = "1011";
-    string c;
+/*
+leetcode 67 add binary
+class Solution {
+public:
+    string addBinary(string a, string b) {
+         string c;
     char carry = '0';
 
     if(a.length() != b.length()) {
@@ -660,6 +658,7 @@ int main() {
         j--;
     }
     if(carry == '1') c = carry + c;
-    cout<<c;
-    return 0;
-}
+    return c;
+    }
+};
+*/
