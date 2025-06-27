@@ -662,3 +662,28 @@ public:
     }
 };
 */
+
+/*
+
+/// leetcode 415
+
+class Solution {
+public:
+    string addStrings(string num1, string num2) {
+    while(num1.length() < num2.length()) num1 = '0' + num1;
+    while(num2.length() < num1.length()) num2 = '0' + num2;
+    int n = num1.length();
+    int carry = 0;
+    string ans;
+
+    for(int i = n-1; i >= 0; i--) {
+        int sum = (num1[i] - '0') + (num2[i] - '0') + carry;
+        int temp = sum % 10;
+        ans = char(temp + '0') + ans;
+        carry = sum / 10;
+    }
+    if(carry > 0) ans = char(carry + '0') + ans;
+    return ans;
+    }
+};
+*/

@@ -498,7 +498,24 @@ using namespace std;
 
 int main() 
 {
-    int k = 25;
-    cout<<k / 10;
+    string num1 = "12", num2 = "46";
+    string ans;
+    int carry = 0;
+    for (int i = 1; i >= 0; i--)
+    {
+        carry = 0;        
+        int tempResult;
+        for (int j = 1; j >= 0; j--)
+        {
+            int product = char(num1[i] - '0') * char(num2[j] - '0') + carry;
+            tempResult = product % 10;
+            carry = product / 10;       
+        }   
+
+        if(carry > 0) tempResult = carry * 10 + tempResult;
+
+
+    }
+    
     return 0;
 }
