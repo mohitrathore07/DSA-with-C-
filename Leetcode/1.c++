@@ -551,7 +551,7 @@ class Solution {
             for(int j = 0; j < i; j++) leftSum += nums[j];
             rightSum = totalSum - leftSum - nums[i];
             if(leftSum == rightSum) return i;
-        }
+        } 
         return -1;
     }
 };
