@@ -493,29 +493,40 @@ int main() {
 */
 
 #include <iostream>
-#include <vector>
+
 using namespace std;
 
 int main() 
 {
-    string num1 = "12", num2 = "46";
-    string ans;
-    int carry = 0;
-    for (int i = 1; i >= 0; i--)
-    {
-        carry = 0;        
-        int tempResult;
-        for (int j = 1; j >= 0; j--)
-        {
-            int product = char(num1[i] - '0') * char(num2[j] - '0') + carry;
-            tempResult = product % 10;
-            carry = product / 10;       
-        }   
-
-        if(carry > 0) tempResult = carry * 10 + tempResult;
-
-
-    }
+    string num1 = "123", num2 = "456";
+    int ans=0;
+    int n = num1.length()-1;
+    int m = num2.length()-1;
     
+    for (int i = n; i >= 0; i--)
+    {
+        int carry = 0; 
+        int res = 0;
+        int pow10 = 1;
+        for (int j = m; j >= 0; j--)
+        {
+            int product = (num1[i] - '0') * (num2[j] - '0') + carry;
+            res = (product%10) * pow10 + res;
+            carry = product / 10;
+            pow10 *= 10;
+        }    
+        if (carry > 0)
+        {
+            res = carry * pow10 + res;
+        }
+        int k = i;
+        while (k < n) {
+            res = res * 10;
+            k++;
+        }
+        ans += res;
+    }
+    string finalAnswer = to_string(ans);
+    cout << finalAnswer << endl;
     return 0;
 }
