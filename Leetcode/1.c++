@@ -755,3 +755,20 @@ public:
     }
 };
 */
+
+/*
+leetcode 53
+class Solution {
+public:
+    int maxSubArray(vector<int>& arr) {
+        
+        int curr = 0, maxSum = INT_MIN;
+        for(int val: arr) {
+            curr += val;
+            maxSum = max(curr, maxSum);
+            if(curr < 0) curr = 0; 
+        }
+        return maxSum;
+    }
+};
+*/
