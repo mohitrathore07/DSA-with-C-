@@ -1,0 +1,153 @@
+📘 DSA Practice in C++: Arrays Only (20+ Questions)
+✅ Basic Array Questions
+
+Input and Output of an Array - done
+
+Find Maximum Element in Array  - done
+
+Find Minimum Element in Array - done
+
+Calculate Sum of All Array Elements - done 
+
+Count Even and Odd Numbers in Array - done
+
+Find Second Largest Element - done
+
+Check if Array is Sorted - done
+
+Linear Search in Array - done
+
+Reverse an Array (In-place) - done
+
+Left Rotate Array by One - done
+
+Right Rotate Array by One - done
+
+Rotate Array by D Positions (Left or Right) - done
+
+Insert Element at a Given Index
+
+Delete Element from Array
+
+Remove Duplicates (Sorted Array)
+
+🔍 Intermediate & LeetCode-Style Questions
+Move All Zeros to End (Maintain Relative Order)
+
+Two Sum (LeetCode)
+
+Find All Pairs with a Given Sum
+
+Kadane’s Algorithm (Maximum Subarray Sum)
+
+Find the Missing Number from 0 to N
+
+Find the Duplicate Element in Array
+
+Merge Two Sorted Arrays
+
+Find Union and Intersection of Two Arrays
+
+Sort an Array of 0s, 1s, and 2s (Dutch National Flag Problem)
+
+Longest Consecutive Subsequence
+
+
+
+
+📘 Miscellaneous Must-Know Array Questions (For Strong Base)
+🔹 1. Find all elements that appear more than n/2 times
+→ [Boyer-Moore Voting Algo]
+
+🔹 2. Find the majority element (if exists)
+🔹 3. Count the number of inversions in an array
+→ [Advanced: Use Merge Sort technique]
+
+🔹 4. Check if two arrays are equal or not (unordered)
+🔹 5. Find the intersection of two arrays
+→ Use Hash Maps or Two-Pointer Technique
+
+🔹 6. Find the first repeating element in an array
+🔹 7. Find the first non-repeating element
+🔹 8. Find the element with maximum frequency
+🔹 9. Find the second smallest and second largest element
+🔹 10. Given an array, find if there exists a pair with difference K
+🔹 11. Rearrange positive and negative numbers alternately
+→ Use two pointers or extra space
+
+🔹 12. Find the maximum product subarray
+🔹 13. Find the longest subarray with sum = K
+🔹 14. Count subarrays with sum divisible by K
+🔹 15. Rearrange array to form alternating peaks and valleys
+🔹 16. Find the equilibrium index
+→ (Sum of left elements = sum of right elements)
+
+🔹 17. Find the leader elements in the array
+→ (An element is leader if all elements to its right are smaller)
+
+🔹 18. Rearrange array so that arr[i] = i if possible, else -1
+🔹 19. Check if array can be sorted by only one swap
+🔹 20. Find maximum circular subarray sum
+→ (Kadane’s variation)
+
+✅ Bonus: Pattern Questions from Arrays
+Subarrays with even/odd elements only
+
+Count number of pairs with XOR = K
+
+Maximum sum of i * arr[i] with rotations
+
+Array rotation using reversal algorithm
+
+📌 Tips:
+Try to implement in dry-run form before writing code
+
+Use Hash Maps, Prefix Sums, and Sliding Windows in some of these
+
+Would you like a PDF of these 20 questions or should I help you solve one right now with full code and explanation?
+
+
+
+
+
+
+
+
+You said:
+✅ Bonus: Pattern Questions from Arrays // ye bhi de
+
+
+ChatGPT said:
+Sure! Here's a list of ✅ Bonus Pattern-Based Array Questions — these are logical, high-value problems that follow specific solving patterns (like prefix sum, XOR tricks, sliding window, etc.). These types of problems often show up in coding rounds and interviews.
+
+✅ Bonus: Pattern-Based Questions from Arrays
+🔹 1. Count Subarrays with Even Sum / Odd Sum
+→ Use prefix sum + modulo
+
+🔹 2. Count Number of Subarrays with XOR = K
+→ Use prefix XOR + unordered_map
+
+🔹 3. Maximum Product Subarray
+→ Track max and min product at each step (because of negatives)
+
+🔹 4. Longest Subarray with Sum = K
+→ Sliding window for positives, hashmap for mix of positives/negatives
+
+🔹 5. Longest Subarray with Equal 0s and 1s
+→ Replace 0s with -1s → use prefix sum + hashmap
+
+🔹 6. Maximum Sum of i * arr[i] with Array Rotations
+→ Use rotation formula:
+ next_sum = curr_sum + total_sum - n * arr[n - i]
+
+🔹 7. Rearrange Array so that arr[i] = i or -1
+→ For index i, if i is present, place i at arr[i], else -1
+
+🔹 8. Check if Array Can Be Sorted by At Most One Swap
+→ Compare with sorted array, count mismatches
+
+🔹 9. Smallest Missing Positive Number
+→ Rearrangement-based: place number i at index i - 1
+
+🔹 10. Find Two Non-Overlapping Subarrays with Given Sum
+→ Use prefix sum + hash + window shrinking
