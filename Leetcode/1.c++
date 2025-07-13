@@ -772,3 +772,176 @@ public:
     }
 };
 */
+
+/*
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int n = prices.size();
+        int min = INT_MAX;
+        int idx = 0;
+        for(int i = 0; i < n; i++) {
+            if(prices[i] < min) 
+            {
+                min = prices[i];
+                idx = i;
+            }
+            
+        }
+
+        int max = INT_MIN;
+        while (idx < n) {
+            if(idx == n) idx++;
+            if(prices[idx] > max) max = prices[idx];
+            idx++;
+        }
+        
+        return max-min;
+    }
+};  
+*/
+
+/*
+
+
+121. Best Time to Buy and Sell Stock
+    class Solution {
+    public:
+        int maxProfit(vector<int>& prices) {
+            int n = prices.size();
+            int ans = 0;
+            int min = INT_MAX;
+            for(int i = 0; i < n; i++) {
+                if(prices[i] < min) min = prices[i];
+                ans = max(ans, prices[i]-min);
+            }        
+            return ans;
+        }
+    };
+
+*/
+
+
+/*
+
+1710. Maximum Units on a Truck
+
+class Solution {
+public:
+    int maximumUnits(vector<vector<int>>& boxTypes, int truckSize) {
+        sort(boxTypes.begin(), boxTypes.end(), [](vector<int>& a, vector<int>& b) {
+            return a[1] > b[1];  
+        });
+
+        int maximumUnits = 0;
+        for (auto& box : boxTypes) {
+            if(truckSize > 0) {
+                int boxCounttaken = min(box[0] , truckSize);
+                maximumUnits += (box[1] * boxCounttaken);
+                truckSize = truckSize -  boxCounttaken;
+            }
+            else break;
+        }
+        return maximumUnits;
+    }
+};
+*/
+
+/*
+
+1029. Two City Scheduling
+
+class Solution {
+public:
+    int twoCitySchedCost(vector<vector<int>>& costs) {
+        int size = costs.size();
+        if (size % 2 != 0) {
+            return -1;
+        }
+        vector<pair<int, int>> diffWithIndex;
+        
+        for (int i = 0; i < size; i++) {
+            int diff = costs[i][0] - costs[i][1];
+            diffWithIndex.push_back({i, diff});
+        }
+
+       sort(diffWithIndex.begin(), diffWithIndex.end(), [](pair<int,int>& a, pair<int,int>& b) {
+            return a.second < b.second;
+        });
+
+        int ans = 0;
+        for (int i = 0; i < size; i++) {
+            int index = diffWithIndex[i].first;
+            if (i < size / 2) {
+                ans += costs[index][0]; 
+            } else {
+                ans += costs[index][1]; 
+            }
+        }
+        return ans;
+    }
+};
+*/
+
+/*
+2389. Longest Subsequence With Limited Sum
+
+class Solution {
+public:
+    vector<int> answerQueries(vector<int>& nums, vector<int>& queries) {
+        int n = nums.size();
+        int m = queries.size();
+
+        vector<int> ans(m);
+        sort(nums.begin(), nums.end());
+
+        for(int i = 1; i < n ; i++) {
+            nums[i] += nums[i-1];
+        }
+        for(int i = 0; i < m; i++) {
+            int len = 0;
+            for(int j = 0; j < n; j++) {
+                if(nums[j] > queries[i]) break;
+                len++;
+            }
+            ans[i] = len;
+        }
+        return ans;
+    }
+};
+*/
+
+/*
+better time complexity bcz binary search use kr liya
+
+class Solution {
+public:
+    vector<int> answerQueries(vector<int>& nums, vector<int>& queries) {
+        int n = nums.size();
+        int m = queries.size();
+
+        vector<int> ans(m);
+        sort(nums.begin(), nums.end());
+
+        for(int i = 1; i < n ; i++) {
+            nums[i] += nums[i-1];
+        }
+        for(int i = 0; i < m; i++) {
+            int len = 0;
+            int lo = 0;
+            int hi = n-1;
+            while(lo <= hi) {
+                int mid = lo + (hi-lo)/2;
+                if(nums[mid] > queries[i]) hi = mid - 1;
+                else {
+                    len = mid + 1;
+                    lo = mid + 1;
+                }
+            }
+            ans[i] = len;
+        }
+        return ans;
+    }
+};
+*/
+

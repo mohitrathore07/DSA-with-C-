@@ -492,6 +492,7 @@ int main() {
 
 */
 
+/*
 #include <iostream>
 
 using namespace std;
@@ -529,4 +530,30 @@ int main()
     string finalAnswer = to_string(ans);
     cout << finalAnswer << endl;
     return 0;
+}*/
+
+/*
+#include <iostream>
+#include <vector>
+#include <climits>
+using namespace std;
+
+int main() 
+{
+    vector <int> nums = {1,-2,3,-2};
+    int n = nums.size();
+    int totalSum = 0;
+    int curr = 0 , minSum = INT_MAX;
+    for (int val : nums)
+    {
+        totalSum += val;
+        curr += val;
+        minSum = min(minSum , curr);
+        if(curr > 0) curr = 0;
+    }
+    cout<<totalSum<< "  min is: "<<minSum;
+    
+    return 0;
 }
+*/
+
