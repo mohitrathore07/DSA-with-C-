@@ -25,18 +25,18 @@ Right Rotate Array by One - done
 
 Rotate Array by D Positions (Left or Right) - done
 
-Insert Element at a Given Index
+Insert Element at a Given Index - done 
 
-Delete Element from Array
+Delete Element from Array - done
 
-Remove Duplicates (Sorted Array)
+Remove Duplicates (Sorted Array) - done
 
 🔍 Intermediate & LeetCode-Style Questions
 Move All Zeros to End (Maintain Relative Order)
 
-Two Sum (LeetCode)
+Two Sum (LeetCode) - done
 
-Find All Pairs with a Given Sum
+Find All Pairs with a Given Sum - done
 
 Kadane’s Algorithm (Maximum Subarray Sum)
 
@@ -51,7 +51,6 @@ Find Union and Intersection of Two Arrays
 Sort an Array of 0s, 1s, and 2s (Dutch National Flag Problem)
 
 Longest Consecutive Subsequence
-
 
 
 

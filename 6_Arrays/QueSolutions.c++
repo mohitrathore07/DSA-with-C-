@@ -170,3 +170,194 @@ int main() {
 }
 */
 
+/*
+
+inserting an element at a specified index - condition fixed size array
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[10] = {1,2,3,4,5,6};
+    
+    int size = 6; // initial number of elements
+    
+    int index = 2; // where to insert
+    int element = 44;
+    
+    for (int i = size; i > index; i--)
+    {
+        arr[i] = arr[i-1];
+    }
+    
+    arr[index] = element;
+    size++;
+    cout << "Array after insertion: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    return 0;
+}
+*/
+
+
+/*
+vector insertion element
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> arr = {1, 2, 3, 5, 4}; // initial vector
+
+    int index = 2;
+    int element = 44;
+
+    // Insert 44 at index 2
+    arr.insert(arr.begin() + index, element);
+
+    // Print updated vector
+    cout << "Vector after inserting 44 at index 2: ";
+    for (int num : arr) {
+        cout << num << " ";
+    }
+
+    return 0;
+}
+
+*/
+
+
+/*
+
+deleting an element from a specified index - condition fixed size array
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[10] = {1, 2, 3, 44, 5}; // array of size 10
+    int size = 5;                   // current number of elements
+
+    int indexToDelete = 3; // delete the element at index 3 (value = 44)
+
+    // Shift elements left from indexToDelete
+    for (int i = indexToDelete; i < size - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+
+    size--; // decrease size since one element is removed
+
+    // Print updated array
+    cout << "Array after deleting element at index " << indexToDelete << ": ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
+
+*/
+
+/*
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {1, 1, 2, 2, 3, 4, 4};
+    int n = 7;
+    for (int i = 1; i < n-1; i++)
+    {
+         if(arr[i] == arr[i-1]) {
+            int temp = arr[i];
+            arr[i] = arr[i+1];
+            arr[i+1] = temp; 
+         }  
+    }
+    
+    return 0;
+}
+*/
+
+// Remove Duplicates (Sorted Array) - works with unsorted as well
+
+/*
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {1,3,1,5,5,6,4};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    
+    int i = 0 , j = 1;
+    
+    while (j < n)
+    {
+        if(arr[i] != arr[j]) {
+            i++;
+            arr[i] = arr[j];
+        }
+        j++;
+    }
+    
+    for (int a = 0; a <= i; a++)
+    {
+        cout<<arr[a]<<" ";
+    }
+    
+    return 0;
+}
+*/
+
+/*
+two sum leetcode
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int> result;
+        
+        for(int i = 0; i < nums.size(); i++)
+        {
+            for(int j = i+1; j < nums.size(); j++)
+            {
+                if(nums[i]+nums[j] == target)
+                {    
+                    result.push_back(i);
+                    result.push_back(j);
+                    return result;
+                }
+            }   
+        }   
+        return {};
+    }
+};
+*/
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr1[] = {1, 2, 4, 5, 7};
+    int arr2[] = {5, 6, 3, 4, 8};
+    int x = 9;
+
+    int n1 = sizeof(arr1) / sizeof(arr1[0]);
+    int n2 = sizeof(arr2) / sizeof(arr2[0]);
+    for (int i = 0; i < n1; i++)
+    {
+        for (int j = 0; j < n2; j++)
+        {  
+                if ((arr1[i] + arr2[j]) == x) {
+                cout << "(" << arr1[i] << ", " << arr2[j] << ")" << endl;
+            }
+        }   
+    }
+    
+    return 0;
+}
