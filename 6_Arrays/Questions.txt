@@ -38,19 +38,19 @@ Two Sum (LeetCode) - done
 
 Find All Pairs with a Given Sum - done
 
-Kadane’s Algorithm (Maximum Subarray Sum)
+Kadane’s Algorithm (Maximum Subarray Sum) - done 
 
-Find the Missing Number from 0 to N
+Find the Missing Number from 0 to N   - done
 
-Find the Duplicate Element in Array
+Find the Duplicate Element in Array - done
 
-Merge Two Sorted Arrays
+Merge Two Sorted Array - done
 
-Find Union and Intersection of Two Arrays
+Find Union and Intersection of Two Arrays   -- done
 
-Sort an Array of 0s, 1s, and 2s (Dutch National Flag Problem)
+Sort an Array of 0s, 1s, and 2s (Dutch National Flag Problem) - done
 
-Longest Consecutive Subsequence
+Longest Consecutive Subsequence - done
 
 
 

@@ -338,6 +338,7 @@ public:
 };
 */
 
+/*
 
 #include <iostream>
 using namespace std;
@@ -346,14 +347,14 @@ int main() {
     int arr1[] = {1, 2, 4, 5, 7};
     int arr2[] = {5, 6, 3, 4, 8};
     int x = 9;
-
+    
     int n1 = sizeof(arr1) / sizeof(arr1[0]);
     int n2 = sizeof(arr2) / sizeof(arr2[0]);
     for (int i = 0; i < n1; i++)
     {
         for (int j = 0; j < n2; j++)
         {  
-                if ((arr1[i] + arr2[j]) == x) {
+            if ((arr1[i] + arr2[j]) == x) {
                 cout << "(" << arr1[i] << ", " << arr2[j] << ")" << endl;
             }
         }   
@@ -361,3 +362,89 @@ int main() {
     
     return 0;
 }
+*/
+
+
+/*
+kadane's algorithum
+
+class Solution {
+public:
+    int maxSubArray(vector<int>& arr) {
+        
+       int curr = 0 , maxSum = INT_MIN;
+
+       for(int i: arr) {
+            curr += i;
+            maxSum = max(curr, maxSum);
+            if(curr < 0) curr = 0;
+       }
+       return maxSum;
+    }
+};
+
+*/
+
+/*
+
+// missing number - math method
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[]  = {3, 0, 1};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    
+    int totalSum = n * (n+1) / 2;
+    
+    int arraySum = 0;
+    for(int i: arr) {
+        arraySum += i;
+    }
+    
+    cout<<"Missing is: "<<totalSum  - arraySum;
+    return 0;
+}
+
+*/
+
+/*
+// Sort an Array of 0s, 1s, and 2s (Dutch National Flag Problem)
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void diplay(int arr[] , int n) {
+    for(int i = 0; i <= n- 1; i++ ) {
+        cout<<arr[i]<<" ";
+    }
+}
+
+int main () {
+    int arr[] = {1, 0 , 2 , 2 , 0 , 1 , 0 };
+    int  n = 7;
+    int lo = 0 , hi = n-1, mid = 0;
+    
+    while (mid <= hi)
+    {
+        if(arr[mid] == 0) {
+            swap(arr[lo] , arr[mid]);
+            lo++;
+            mid++;
+        }
+        else if(arr[mid] == 2) {
+            swap(arr[hi] , arr[mid]);
+            hi--;
+        }
+        
+        else {
+            mid++;
+        }
+    }
+    
+    diplay(arr , n);
+    return 0;
+}
+*/
+
+
