@@ -447,4 +447,56 @@ int main () {
 }
 */
 
+// subarray
+/*
+#include <iostream>
+#include <vector>
+using namespace std;
 
+int main() {
+
+    vector<int> nums = {4,5,0,-2,-3,1};
+    int n = nums.size();
+    
+
+    for(int st = 0 ; st < n; st++) {
+        for(int end = st; end < n; end++) {
+            int sum = 0;
+            for(int i = st; i <= end; i++) {
+                cout<<nums[i]<<",";
+            }
+            cout<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+*/
+
+
+ #include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+
+    vector<int> nums = {2,3,1,2,4,3};
+    int n = nums.size();
+    int target = 7;
+    int prefix[n + 1];
+    prefix[0] = 0;
+
+    for (int i = 0; i < n; i++) {
+        prefix[i + 1] = prefix[i] + nums[i];
+    }
+
+    
+    for(int i  = 0; i < n; i++) {
+        for(int j = i+1; j < n; j++) {
+            int sum = prefix[j] - prefix[i];
+            if(sum>=target) cout<<"pair is: "<<prefix[j]<<" , " <<prefix[i]<<endl;
+        }    
+        }
+    
+    return 0;
+}
