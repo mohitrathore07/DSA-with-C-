@@ -474,29 +474,75 @@ int main() {
 */
 
 
- #include <iostream>
-#include <vector>
+//  #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// int main() {
+
+//     vector<int> nums = {2,3,1,2,4,3};
+//     int n = nums.size();
+//     int target = 7;
+//     int prefix[n + 1];
+//     prefix[0] = 0;
+
+//     for (int i = 0; i < n; i++) {
+//         prefix[i + 1] = prefix[i] + nums[i];
+//     }
+
+    
+//     for(int i  = 0; i < n; i++) {
+//         for(int j = i+1; j < n; j++) {
+//             int sum = prefix[j] - prefix[i];
+//             if(sum>=target) cout<<"pair is: "<<prefix[j]<<" , " <<prefix[i]<<endl;
+//         }    
+//         }
+    
+//     return 0;
+// }
+
+
+// pair sum - better then bruit force method
+/*
+
+#include <iostream>
 using namespace std;
 
-int main() {
-
-    vector<int> nums = {2,3,1,2,4,3};
-    int n = nums.size();
-    int target = 7;
-    int prefix[n + 1];
-    prefix[0] = 0;
-
-    for (int i = 0; i < n; i++) {
-        prefix[i + 1] = prefix[i] + nums[i];
-    }
-
+pair<int, int> pairSum(int arr[], int n, int target){
+    int i = 0 , j = n-1;
     
-    for(int i  = 0; i < n; i++) {
-        for(int j = i+1; j < n; j++) {
-            int sum = prefix[j] - prefix[i];
-            if(sum>=target) cout<<"pair is: "<<prefix[j]<<" , " <<prefix[i]<<endl;
-        }    
+    while (i<j)
+    {
+        int sum = arr[i] + arr[j];
+        if(sum>target) {
+            j--;
+            
+        } 
+        else if(sum<target) {
+            i++;
+            
+        } 
+        else {
+            return {i , j};
         }
+    }
     
-    return 0;
+    return {-1 , -1};
 }
+
+int main() {
+    
+int arr[] = {1, 2, 3, 4, 5, 6, 7 };
+int target = 13;
+int n = sizeof(arr) / sizeof(arr[0]);
+pair<int, int> res = pairSum(arr , n , target);
+if (res.first != -1)
+cout << "Pair: " << res.first << ", " << res.second << endl;
+
+else
+cout << "No pair found\n";
+
+return 0;
+}
+*/
+
