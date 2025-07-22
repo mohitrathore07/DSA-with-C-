@@ -115,6 +115,7 @@ int main() {
 }
 */
 
+/*
 // second largest
 #include <iostream>
 #include <vector>
@@ -140,3 +141,47 @@ int main() {
    cout<<fmax<<" "<<secmax;
     return 0;
 }
+*/
+
+/* 
+/// decimal to binary
+#include <iostream>
+using namespace std;
+
+int main() {
+    int ans = 0 , pow = 1;
+    int decNum = 42;
+    
+    while (decNum > 0) 
+    {
+        int remainder = decNum % 2;
+        decNum  /= 2;
+        ans += (remainder * pow); 
+        pow *= 10;
+    }
+    cout<<ans;
+    return 0;
+}
+*/
+
+/*
+
+// binary to decimal
+#include <iostream>
+using namespace std;
+
+int main() {
+    int ans = 0 , pow = 1;
+    int Num = 101010;
+    
+    while (Num > 0) 
+    {
+        int remainder = Num % 10;
+        ans += (remainder  * pow); 
+        pow *= 2;
+        Num /= 10;
+    }
+    cout<<ans;
+    return 0;
+}
+    */
