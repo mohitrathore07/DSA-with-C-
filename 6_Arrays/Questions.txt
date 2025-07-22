@@ -55,7 +55,7 @@ Longest Consecutive Subsequence - done
 
 
 📘 Miscellaneous Must-Know Array Questions (For Strong Base)
-🔹 1. Find all elements that appear more than n/2 times
+🔹 1. Find all elements that appear more than n /2 times
 → [Boyer-Moore Voting Algo]
 
 🔹 2. Find the majority element (if exists)
