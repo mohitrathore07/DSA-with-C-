@@ -53,6 +53,7 @@ int main() {
 /* 
 // array partition  into 2 contiguous array of equal sum
 
+
 #include <iostream>
 #include <vector>
 using namespace std;

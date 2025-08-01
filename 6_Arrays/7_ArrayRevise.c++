@@ -348,3 +348,68 @@ int main() {
 }
 */
  
+/*
+
+// prefix sum
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {1,2,3,4,5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    
+    
+    for (int i = 1; i < size; i++)
+    {
+        arr[i] += arr[i-1];
+    }
+    
+    for(int val:arr) {
+        cout<<val<<" ";
+    }
+    return 0;
+}
+*/
+
+/* 
+
+// array ko subarray me divide krke partion
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {1,2,3,4,5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    
+    
+    for (int i = 1; i < size; i++)
+    {
+        arr[i] += arr[i-1];
+    }
+    
+    for(int val:arr) {
+        cout<<val<<" ";
+    }
+    return 0;
+}
+*/
+
+/*
+// convert characters a - A
+
+#include <iostream>
+using namespace std;
+
+char convert(char ch) {
+    int ascii = ch - 'a' + 'A';
+    return (char)ascii;
+}
+
+int main() {
+    char ch = 'c';
+    cout<<convert(ch);
+    return 0;
+}
+*/
+
