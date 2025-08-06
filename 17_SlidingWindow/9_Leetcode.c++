@@ -154,3 +154,282 @@ public:
 };
 
 */
+
+
+/*
+leetcode 1004
+
+class Solution {
+public:
+    int longestOnes(vector<int>& nums, int k) {
+        int n = nums.size();
+        int flips = 0, i = 0, j = 0;
+        int ans = INT_MIN , len;
+        while(j < n) {
+            if(nums[j] == 1) j++;
+            else {
+                if(flips < k) {
+                    flips++;
+                    j++;
+                }
+                else {
+                    len = j - i;
+                    ans = max(len ,ans);
+                    while(nums[i] == 1) i++;
+                    i++; 
+                    j++;
+                }
+            }
+        }
+        len = j - i;
+        ans = max(len ,ans);
+        return ans;
+    }
+};
+*/
+
+/*
+leetcode 1493  - same as above way
+
+class Solution {
+public:
+    int longestSubarray(vector<int>& nums) {
+        int n = nums.size();
+        int i = 0, j = 0 , len, flip = 0;
+        int ans = INT_MIN ;
+        while(j < n) {
+            if(nums[j] == 1) j++;
+            else {
+                if(flip == 0) {
+                    flip = 1;
+                    j++;
+                }
+                else {
+                    len = j - i;
+                    ans = max(ans , len);
+                    while(nums[i] == 1) i++;
+                    i++;
+                    j++;
+                }
+            }
+        }
+        len = j - i;
+        ans = max(ans , len);
+
+        return ans-1;
+    }
+};
+*/
+
+
+/*
+leetcode 1493 - different way
+
+class Solution {
+public:
+    int longestSubarray(vector<int>& nums) {
+        int n = nums.size();
+        int i = 0, j = 0,count = 0, zeroPos = -1;
+        int ans = INT_MIN;
+        while(j < n) {
+            int prev = zeroPos;
+            if(nums[j] == 0) {
+                count++;
+                zeroPos = j;
+            }
+            if(count <= 1) j++;
+            else {
+                ans = max(ans , j - i);
+                i = prev+1;
+                count--;
+                j++;
+            }
+        }
+        ans = max(ans , j-i);
+
+        return ans-1;
+    }
+};
+*/
+
+/*
+class Solution {
+public:
+    int numSubarrayProductLessThanK(vector<int>& nums, int k) {
+        int n = nums.size();
+        int j = 0, count = 0;
+
+        while(j < n) {
+            int product = 1;
+            int i = j + 1;
+            if(nums[j] < k) {
+                count++;
+                
+            }
+            product *= nums[j];
+            while(i < n) {
+                product *= nums[i];
+                if(product >= k) break;
+                count++;
+                i++;
+            }
+            j++;
+        } 
+        return count;
+    }
+};
+
+*/
+
+/*
+
+class Solution {
+public:
+    int numSubarrayProductLessThanK(vector<int>& nums, int k) {
+        int n = nums.size();
+        int j = 0, count = 0;
+
+        while(j < n) {
+            int product = 1;
+            int i = j + 1;
+            if(nums[j] < k) {
+                count++;
+                
+            }
+            product *= nums[j];
+            while(i < n) {
+                product *= nums[i];
+                if(product >= k) break;
+                count++;
+                i++;
+            }
+            j++;
+        } 
+        return count;
+    }
+};
+
+class Solution {
+public:
+    int numSubarrayProductLessThanK(vector<int>& nums, int k) {
+        int n = nums.size();
+        int j = 0, count = 0;
+
+        while(j < n) {
+            int product = 1;
+            int i = j + 1;
+            if(nums[j] < k) {
+                count++;
+                
+            }
+            product *= nums[j];
+            while(i < n) {
+                product *= nums[i];
+                if(product >= k) break;
+                count++;
+                i++;
+            }
+            j++;
+        } 
+        return count;
+    }
+};
+
+class Solution {
+public:
+    int numSubarrayProductLessThanK(vector<int>& nums, int k) {
+        int n = nums.size();
+        int j = 0, count = 0;
+
+        while(j < n) {
+            int product = 1;
+            int i = j + 1;
+            if(nums[j] < k) {
+                count++;
+                
+            }
+            product *= nums[j];
+            while(i < n) {
+                product *= nums[i];
+                if(product >= k) break;
+                count++;
+                i++;
+            }
+            j++;
+        } 
+        return count;
+    }
+};
+
+class Solution {
+public:
+    int numSubarrayProductLessThanK(vector<int>& nums, int k) {
+        int n = nums.size();
+        int j = 0, count = 0;
+
+        while(j < n) {
+            int product = 1;
+            int i = j + 1;
+            if(nums[j] < k) {
+                count++;
+                
+            }
+            product *= nums[j];
+            while(i < n) {
+                product *= nums[i];
+                if(product >= k) break;
+                count++;
+                i++;
+            }
+            j++;
+        } 
+        return count;
+    }
+};
+
+
+*/
+
+/*
+
+class Solution {
+public:
+    int numSubarrayProductLessThanK(vector<int>& nums, int k) {
+       if (k <= 1) return 0;
+    int prod = 1, result = 0, left = 0;
+
+    for (int right = 0; right < nums.size(); ++right) {
+        prod *= nums[right];
+        while (prod >= k) {
+            prod /= nums[left++];
+        }
+        result += (right - left + 1);
+    }
+
+    return result;
+    }
+};
+
+*/
+
+/*
+2302
+class Solution {
+public:
+    long long countSubarrays(vector<int>& nums, long long k) {
+        long long sum = 0 , ans = 0;
+        int i = 0, j = 0 , n = nums.size();
+        while(j < n) {
+            sum += nums[j];
+
+            while(i <= j && sum * (j - i + 1) >= k) {
+                sum -= nums[i];
+                i++;
+            }
+            ans += (j-i+1);
+            j++;
+        }
+        return ans;
+    }
+};
+*/
