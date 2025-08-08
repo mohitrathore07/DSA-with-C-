@@ -433,3 +433,79 @@ public:
     }
 };
 */
+
+/*
+1248. Count Number of Nice Subarrays
+class Solution {
+public:
+    int numberOfSubarrays(vector<int>& nums, int k) {
+        return atmost(nums, k) - atmost(nums, k-1);    
+    }
+    int atmost(vector<int>& nums, int k) {
+        int n = nums.size();
+        int i = 0,  count = 0;
+        int j = 0;
+
+        while(j < n) {
+            if(nums[j] % 2 == 1) k--;
+            while(k < 0) {
+                if(nums[i] % 2 == 1) k++;
+                i++;
+            }
+            count += (j-i+1);
+            j++;
+        }
+        return count;
+    }
+};
+*/
+
+/*
+930. Binary Subarrays With Sum
+
+class Solution {
+public:
+    int numSubarraysWithSum(vector<int>& nums, int k) {
+        return atmost(nums, k) - atmost(nums, k-1);  
+    }
+    int atmost(vector<int>& nums, int k) {
+        int n = nums.size();
+        int i = 0,  ans = 0 , j = 0 , sum = 0; 
+        while(j < n) {
+            sum += nums[j];
+            while (i <= j && sum > k) {
+                sum -= nums[i++];
+            }
+            ans += (j-i+1);
+            j++;
+        }
+        return ans;
+    }
+};
+*/
+
+/*
+
+1343. Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold
+class Solution {
+public:
+    int numOfSubarrays(vector<int>& nums, int k, int threshold) {
+        int n = nums.size();
+        int i = 0, j = 0,sum = 0 ,count = k , ans = 0;
+        while(j < n) {
+            sum += nums[j];
+            k--;
+            while(k<0) {
+                sum -= nums[i++];
+                k++;
+            }
+            if(k==0) {
+                double avg = (double)sum / count;
+                if(avg >= threshold) ans++;
+            }
+            j++;
+        }
+        return ans;
+    }
+};
+*/
