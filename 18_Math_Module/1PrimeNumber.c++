@@ -110,7 +110,7 @@ int main() {
     return 0;
 }
     */
-
+/*
 // sequence wise print
 #include <iostream>
 #include <cmath>
@@ -120,12 +120,71 @@ void factors(int n) {
     for(int i = 1; i<=sqrt(n); i++) {
         if(n%i == 0)  cout<<i<<" ";
     }
-    for(int i = sqrt(n)-1; i>=1; i--) {
+    for(int i = sqrt(n)-1; i>1; i--) {
         if(n%i == 0 ) cout<<n/i<<" ";
     }
 }
 
 int main() {
-    factors(49);
+    factors(6);
     return 0;
 }
+*/
+
+// correct way of printing factors 
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void factors(int n) {
+    int num = n;
+    int sq = sqrt(num);
+   for (int i = 1; i <= sq; i++) {
+            if (num % i == 0) {
+                cout << i<<" ";
+            }
+    }
+    for (int i = sq; i >= 2; i--) {  
+        if (num % i == 0) {
+            int otherDiv = num / i;   // logic ki same number repeat na ho 
+                if (otherDiv != num && otherDiv != i) { 
+                    cout<<otherDiv<<" ";
+                }
+            }
+    }
+}
+
+int main() {
+    factors(36);
+    return 0;
+}
+
+/*
+leetcode 507
+
+class Solution {
+public:
+    bool checkPerfectNumber(int num) {
+        if (num <= 1) return false;
+
+        int sum = 1; // 1 is always a proper divisor
+        int sq = sqrt(num);
+
+        for (int i = 2; i <= sq; i++) {
+            if (num % i == 0) {
+                sum += i;
+            }
+        }
+        for (int i = sq; i >= 2; i--) {
+            if (num % i == 0) {
+                int otherDiv = num / i;
+                if (otherDiv != num && otherDiv != i) { 
+                    sum += otherDiv;
+                }
+            }
+        }
+        return sum == num;
+    }
+};
+
+*/
