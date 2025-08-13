@@ -48,7 +48,7 @@ public:
             count += (n/hf);
             n = hf;
         } 
-        return count;
+        return count ;
     }
 };
 */
