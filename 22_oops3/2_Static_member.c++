@@ -59,5 +59,6 @@ int main() {
     bm.setNo(4);
     Bike::a = 77;
     bm.get();
+    
     return 0;
 }
