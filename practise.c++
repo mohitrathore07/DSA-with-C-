@@ -560,7 +560,18 @@ int main()
 #include <iostream>
 using namespace std;
 
+class Bike {
+    public: 
+    int a;
+
+};
+
 int main() {
-    cout<<1%2;
+    Bike  b1;
+    b1.a = 4;
+    Bike  b2 = b1;
+
+    b1.a = 2;
+    cout<<b2.a;
     return 0;
 }
