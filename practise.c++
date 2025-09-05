@@ -560,18 +560,88 @@ int main()
 #include <iostream>
 using namespace std;
 
-class Bike {
+class Node {
     public: 
-    int a;
+    int val;
+    Node* next;  
 
-};
+    Node(int val) {
+        this->val = val;
+        this->next = NULL;
+    }
+}; 
+
+class LinkedList { 
+public: 
+    Node* head;
+    Node* tail;
+    int size;
+    
+    LinkedList() {
+        head = tail = NULL;
+        size = 0;
+    }
+
+    void display() {
+        Node* temp = head;
+        while (temp!=NULL)
+        {
+            cout<<temp->val<<" ";
+            temp = temp->next ;
+        }
+        cout<<endl;
+    }
+
+    void insertAtBeginning(int val) {
+        Node* temp = new Node(val);
+        if(size==0) head = tail = temp; // tail ki value always last element 
+        else {
+            temp->next = head;
+            head = temp;
+        }
+        size++;
+    }
+
+    // delete from head
+    void deleteAtHead() {
+        if(size == 0) {
+            cout<<"List is empty";
+            return;
+        }
+        head = head->next;
+        size--;
+    }
+
+    // delete At tail
+
+    void deleteAtTail() {
+        if(size == 0) {
+            cout<<"List is empty";
+            return;
+        }
+        Node* temp = head;
+        while(temp->next != tail) {
+            temp = temp->next;
+        }
+        temp->next = NULL;
+        tail = temp;
+        size--;
+    }
+
+    
+}; 
 
 int main() {
-    Bike  b1;
-    b1.a = 4;
-    Bike  b2 = b1;
+    LinkedList l;
+    l.insertAtBeginning(5);
+    l.display();
+    l.insertAtBeginning(6);
+    l.display();
+    l.insertAtBeginning(7);
+    l.display();
+    l.insertAtBeginning(8);
+    l.display();
 
-    b1.a = 2;
-    cout<<b2.a;
+
     return 0;
 }
