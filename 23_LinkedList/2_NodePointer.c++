@@ -183,6 +183,15 @@ class Node {
     }
 }; 
 
+ void traverse(Node* head) {
+        cout<<"printing values"<<endl;
+        while (head && head->next)
+        {
+            cout<<head->val<<" ";
+            head = head->next->next;
+        }
+    }
+
 void insertAtEnd(Node* head, int val) {
      Node* t = new Node(val);
      while(head->next != NULL) head = head->next;
@@ -194,10 +203,12 @@ int main() {
    Node* b = new Node(20);
    Node* c = new Node(30);
    Node* d = new Node(40);
+   Node* e = new Node(50);
 
    a->next = b;
    b->next = c;
    c->next = d;
+   d->next = e;
 
    Node* temp = a;
    while (temp!= NULL)
@@ -216,5 +227,7 @@ int main() {
      temp = temp->next;
    }
 
+
+    traverse(a);
    return 0;
 }
